@@ -1,3 +1,4 @@
+- 2026-08-06T2204 · [[API Pentesting]]
 - 2026-08-06T2203 · [[Web Hacking Cheat Sheet]]
 - 2026-08-06T2151 · [[Searching Exploits]]
 - 2026-08-06T2150 · [[Data Exfiltration Cheat Sheet]]
@@ -22,4 +23,3 @@
 - 2026-07-26T1637 · [[Linux Security]]
 - 2026-07-26T1637 · [[README]]
 - 2026-07-26T1637 · [[Browse]]
-- 2026-07-26T1636 · [[Active Directory Pentesting]]
