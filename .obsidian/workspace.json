@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Penetration Testing/Mobile Pentesting/Mobile Pentesting Tools Reference.md",
+                "file": "Penetration Testing/Exploitation/Searching Exploits.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mobile Pentesting Tools Reference"
+              "title": "Searching Exploits"
             }
           }
         ]
@@ -190,6 +190,9 @@
   },
   "active": "7f51b4a8d3ca4804",
   "lastOpenFiles": [
+    "Penetration Testing/Mobile Pentesting/Mobile Pentesting Tools Reference.md",
+    "Penetration Testing/Exploitation/Searching Exploits.md",
+    "Penetration Testing/Exploitation",
     "Penetration Testing/Mobile Pentesting/Android Pentesting.md",
     "Certifications/Am I Ready for the OSCP Here iss the Answer Nobody Wants to Hear.md",
     "DFIR/DFIR Terms and Definitions.md",
@@ -215,8 +218,6 @@
     "Tech/Operating Systems/Linux OS/Linux Notes.md",
     "Tech/Operating Systems/Linux OS/Tools/Vim.md",
     "Tech/Operating Systems/Linux OS/Tools/cURL.md",
-    "Tech/Operating Systems/Linux OS/Setup Guides/Postfix Incoming Mail Setup.md",
-    "Tech/Hosting/LAMP Stack.md",
     "New Text Document.txt",
     "Docs",
     "Premium Notes and Courses/images/logo v2 transparent.png",
@@ -226,7 +227,6 @@
     "HTB Writeups/HTB Sorcery.html",
     "HTB Writeups/HTB Snapped .html",
     "THM Writeups/Elastic Stack The Basics.html",
-    "Certifications",
     "Premium Notes and Courses/images/2.png",
     "Premium Notes and Courses/images/3 .png",
     "Premium Notes and Courses/images/8.png",

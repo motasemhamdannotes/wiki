@@ -1,3 +1,4 @@
+- 2026-08-06T2121 · [[Searching Exploits]]
 - 2026-08-01T1021 · [[DFIR Terms and Definitions]]
 - 2026-08-01T0955 · [[DFIR Basics]]
 - 2026-07-29T2107 · [[THM Writeups]]
@@ -22,4 +23,3 @@
 - 2026-07-26T1636 · [[Active Directory Pentesting]]
 - 2026-07-26T1636 · [[API Pentesting]]
 - 2026-07-26T1636 · [[Android Pentesting]]
-- 2026-07-26T1636 · [[Pentesting with Kali Linux]]
