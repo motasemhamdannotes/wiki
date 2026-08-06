@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Penetration Testing/Data Exfiltration Cheat Sheet.md",
+                "file": "Penetration Testing/Web Hacking/Web Hacking Cheat Sheet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Data Exfiltration Cheat Sheet"
+              "title": "Web Hacking Cheat Sheet"
             }
           }
         ]
@@ -190,8 +190,10 @@
   },
   "active": "7f51b4a8d3ca4804",
   "lastOpenFiles": [
-    "Penetration Testing/Exploitation/Searching Exploits.md",
+    "Penetration Testing/Web Hacking/API Pentesting.md",
+    "Penetration Testing/Web Hacking/Web Hacking Cheat Sheet.md",
     "Penetration Testing/Data Exfiltration Cheat Sheet.md",
+    "Penetration Testing/Exploitation/Searching Exploits.md",
     "Penetration Testing/Windows AD Pentesting/Active Directory Pentesting.md",
     "Penetration Testing/Mobile Pentesting/Mobile Pentesting Tools Reference.md",
     "Penetration Testing/Exploitation",
@@ -216,8 +218,6 @@
     "Tech/Programming/C Programming.md",
     "Tech/Programming/Bash Programming Notes.md",
     "Tech/Blockchain and Crypto.md",
-    "Tech/Operating Systems/Windows AD/Windows Active Directory.md",
-    "Tech/Operating Systems/Linux OS/Linux Notes.md",
     "New Text Document.txt",
     "Docs",
     "Premium Notes and Courses/images/logo v2 transparent.png",
