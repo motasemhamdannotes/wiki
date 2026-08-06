@@ -1,4 +1,4 @@
-- 2026-08-06T2124 · [[Searching Exploits]]
+- 2026-08-06T2131 · [[Searching Exploits]]
 - 2026-08-01T1021 · [[DFIR Terms and Definitions]]
 - 2026-08-01T0955 · [[DFIR Basics]]
 - 2026-07-29T2107 · [[THM Writeups]]
