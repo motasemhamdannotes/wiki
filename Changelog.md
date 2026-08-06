@@ -1,4 +1,4 @@
-- 2026-08-06T2143 · [[Data Exfiltration Cheat Sheet]]
+- 2026-08-06T2144 · [[Data Exfiltration Cheat Sheet]]
 - 2026-08-06T2131 · [[Searching Exploits]]
 - 2026-08-01T1021 · [[DFIR Terms and Definitions]]
 - 2026-08-01T0955 · [[DFIR Basics]]
