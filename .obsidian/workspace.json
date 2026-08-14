@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Penetration Testing/Web Hacking/API Pentesting.md",
+                "file": "Offensive Security/Web Hacking/API Pentesting.md",
                 "mode": "source",
                 "source": false
               },
@@ -188,18 +188,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7f51b4a8d3ca4804",
+  "active": "21a2888db70fbef7",
   "lastOpenFiles": [
-    "Penetration Testing/Web Hacking/Web Hacking Cheat Sheet.md",
+    "Offensive Security/Untitled",
+    "Offensive Security/Web Hacking/Web Hacking Cheat Sheet.md",
     "SOC Analyst Notes/Blue Team Notes.md",
     "SOC Analyst Notes/Azure Security Center.md",
-    "Penetration Testing/Web Hacking/API Pentesting.md",
-    "Penetration Testing/Data Exfiltration Cheat Sheet.md",
-    "Penetration Testing/Exploitation/Searching Exploits.md",
-    "Penetration Testing/Windows AD Pentesting/Active Directory Pentesting.md",
-    "Penetration Testing/Mobile Pentesting/Mobile Pentesting Tools Reference.md",
-    "Penetration Testing/Exploitation",
-    "Penetration Testing/Mobile Pentesting/Android Pentesting.md",
+    "Offensive Security/Web Hacking/API Pentesting.md",
+    "Offensive Security/Data Exfiltration Cheat Sheet.md",
+    "Offensive Security/Exploitation/Searching Exploits.md",
+    "Offensive Security/Windows AD Pentesting/Active Directory Pentesting.md",
+    "Offensive Security/Mobile Pentesting/Mobile Pentesting Tools Reference.md",
+    "Offensive Security/Exploitation",
+    "Offensive Security/Mobile Pentesting/Android Pentesting.md",
     "Certifications/Am I Ready for the OSCP Here iss the Answer Nobody Wants to Hear.md",
     "DFIR/DFIR Terms and Definitions.md",
     "DFIR/DFIR Basics.md",
@@ -217,7 +218,6 @@
     "Tech/Programming/Java.md",
     "Tech/Programming/HTML.md",
     "Tech/Programming/Django.md",
-    "Tech/Programming/C Programming.md",
     "New Text Document.txt",
     "Docs",
     "Premium Notes and Courses/images/logo v2 transparent.png",
