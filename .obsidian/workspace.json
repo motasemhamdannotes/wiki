@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Offensive Security/Recon/Nmap Cheat Sheet.md",
+                "file": "DFIR/DFIR Terms and Definitions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Nmap Cheat Sheet"
+              "title": "DFIR Terms and Definitions"
             }
           }
         ]
@@ -190,8 +190,17 @@
   },
   "active": "7f51b4a8d3ca4804",
   "lastOpenFiles": [
-    "Offensive Security/Web Hacking/API Pentesting.md",
+    "DFIR/DFIR Basics.md",
+    "Cyber Security 101/Cyber Security Notes 101.md",
+    "Certifications/OSCP Certification Cheat Sheet 2026.md",
+    "Career Guidance/Cyber Security Career Notes.md",
+    "Career Guidance/Becoming a Pentester.md",
+    "Bug Bounty/Bug Bounty Cheat Sheet.md",
+    "Bug Bounty/Bug Bounty Methodology.md",
+    "Bug Bounty/Bug Bounty Tools.md",
+    "Career Guidance/Templates/SOC Analyst Interview Templates.md",
     "Offensive Security/Recon/Nmap Cheat Sheet.md",
+    "Offensive Security/Web Hacking/API Pentesting.md",
     "Offensive Security/Recon",
     "Offensive Security/Web Hacking/Web Hacking Cheat Sheet.md",
     "SOC Analyst Notes/Blue Team Notes.md",
@@ -204,21 +213,12 @@
     "Offensive Security/Mobile Pentesting/Android Pentesting.md",
     "Certifications/Am I Ready for the OSCP Here iss the Answer Nobody Wants to Hear.md",
     "DFIR/DFIR Terms and Definitions.md",
-    "DFIR/DFIR Basics.md",
     "HTB Writeups/HTB Writeups.md",
     "GRC/Cyber Security Management.md",
     "Tech/Programming/XML.md",
     "DFIR",
     "Tech/Programming/Typescript.md",
     "Tech/Programming/Swift.md",
-    "Tech/Programming/Python.md",
-    "Tech/Programming/Powershell.md",
-    "Tech/Programming/PHP Programming.md",
-    "Tech/Programming/Laravel.md",
-    "Tech/Programming/Javascript Notes.md",
-    "Tech/Programming/Java.md",
-    "Tech/Programming/HTML.md",
-    "Tech/Programming/Django.md",
     "New Text Document.txt",
     "Docs",
     "Premium Notes and Courses/images/logo v2 transparent.png",
