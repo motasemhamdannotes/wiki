@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Offensive Security/Web Hacking/API Pentesting.md",
+                "file": "Offensive Security/Recon/Nmap Cheat Sheet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "API Pentesting"
+              "title": "Nmap Cheat Sheet"
             }
           }
         ]
@@ -188,13 +188,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "21a2888db70fbef7",
+  "active": "7f51b4a8d3ca4804",
   "lastOpenFiles": [
-    "Offensive Security/Untitled",
+    "Offensive Security/Web Hacking/API Pentesting.md",
+    "Offensive Security/Recon/Nmap Cheat Sheet.md",
+    "Offensive Security/Recon",
     "Offensive Security/Web Hacking/Web Hacking Cheat Sheet.md",
     "SOC Analyst Notes/Blue Team Notes.md",
     "SOC Analyst Notes/Azure Security Center.md",
-    "Offensive Security/Web Hacking/API Pentesting.md",
     "Offensive Security/Data Exfiltration Cheat Sheet.md",
     "Offensive Security/Exploitation/Searching Exploits.md",
     "Offensive Security/Windows AD Pentesting/Active Directory Pentesting.md",
@@ -226,7 +227,6 @@
     "Certifications/thm sal2 vs btl2 vs cdsa.html",
     "HTB Writeups/HTB Sorcery.html",
     "HTB Writeups/HTB Snapped .html",
-    "THM Writeups/Elastic Stack The Basics.html",
     "Premium Notes and Courses/images/2.png",
     "Premium Notes and Courses/images/3 .png",
     "Premium Notes and Courses/images/8.png",
