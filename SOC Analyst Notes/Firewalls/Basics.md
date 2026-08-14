@@ -1,4 +1,6 @@
+[🏠 Main Site](https://motasem-notes.net/) · [🛒 Store](https://shop.motasem-notes.net/) · [▶ YouTube](https://www.youtube.com/@MotasemHamdan) · [☕ Membership](https://buymeacoffee.com/notescatalog/membership)
 
+> Practitioner-grade cybersecurity notes, cert prep guides, and courses. All premium notes available at **[buymeacoffee.com/notescatalog/extras](https://buymeacoffee.com/notescatalog/extras)** or [shop.motasem-notes.net](https://shop.motasem-notes.net)
 
 ### Definition
 A firewall is software or hardware that monitors the network traffic and compares it against a set of rules before passing or blocking it. The most basic firewall should be able to inspect at least the packet's protocol, source and destination port and IP addresses.
