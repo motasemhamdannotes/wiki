@@ -235,27 +235,28 @@ You cannot secure what you don't understand. Network+ covers infrastructure, ope
 The most widely recognized entry-level security certification in the industry, and often a literal HR requirement for junior roles.
 
 - Purchase the Security+ voucher.
-- GET COMPTIA Security+
+- Get [COMPTIA Security+  Notes](https://buymeacoffee.com/notescatalog/e/183200)
 - Study with Professor Messer.
 - Pass the exam.
 
-### 5. CompTIA PenTest+ — Specializing in Offensive Security
+### 5. CompTIA PenTest+ : Specializing in Offensive Security
 
 For those leaning toward offensive roles, PenTest+ covers penetration testing methodology and vulnerability assessment specifically.
 
 - Purchase the PenTest+ voucher.
+- Get [COMPTIA PENTEST+ Notes](https://buymeacoffee.com/notescatalog/e/200332)
 - Study with ACI Learning.
 - Pass the exam.
 
-### 6. CompTIA CySA+ — Cyber Defense Skills
+### 6. CompTIA CySA+ : Cyber Defense Skills
 
-The defensive counterpart — threat detection, analysis, and response. If your interests lean blue team, this is where the ladder starts branching that direction.
+The defensive counterpart ; threat detection, analysis, and response. If your interests lean blue team, this is where the ladder starts branching that direction.
 
 - Purchase the CySA+ voucher.
 - Study with Certify Breakfast on YouTube, and supplement with practice exams via mobile apps.
 - Pass the exam.
 
-### 7. OSCP — Proof You Can Actually Do the Work
+### 7. OSCP : Proof You Can Actually Do the Work
 
 Not a traditional multiple-choice certification, and that's exactly the point. The OSCP demands you compromise real systems in a lab environment and document your process — it's less a credential and more a demonstration.
 
