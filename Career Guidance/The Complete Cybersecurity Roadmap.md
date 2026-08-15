@@ -1,3 +1,5 @@
+
+
 # Where to Actually Start
 
 Cybersecurity has a discoverability problem. Ask ten different practitioners how they got started and you'll get ten different answers ; a CTF here, a certification there, a computer science degree somewhere in the mix. For a newcomer, that's not inspiring. It's paralyzing. There's no shortage of advice; there's a shortage of _direction_.
@@ -254,6 +256,7 @@ The defensive counterpart ; threat detection, analysis, and response. If your in
 
 - Purchase the CySA+ voucher.
 - Study with Certify Breakfast on YouTube, and supplement with practice exams via mobile apps.
+- Get [COMPTIA CySA+ Notes](https://buymeacoffee.com/notescatalog/e/335887)
 - Pass the exam.
 
 ### 7. OSCP : Proof You Can Actually Do the Work
@@ -264,9 +267,9 @@ Consider it the capstone once the foundational certifications are behind you.
 
 ---
 
-## Path 5: The Degree Pursuer's Shortcut
+## Path 5: The Academics Path
 
-A formal degree still opens doors that certifications alone don't — some employers and countries require one outright. But there's a smart way and an expensive way to get one, and the difference between them is significant.
+A formal degree still opens doors that certifications alone don't ; some employers and countries require one outright. But there's a smart way and an expensive way to get one, and the difference between them is significant.
 
 The core strategy: complete the majority of your coursework _outside_ your university, transfer those credits in, and enroll only once you're 50–65% done. Done right, you can finish your remaining coursework in a single term, which minimizes both cost and time. This particular path is built around a **Bachelor of Science in Cybersecurity and Information Assurance (BSCSIA)** through Western Governors University (WGU), a competency-based school that accepts substantial outside transfer credit.
 
@@ -298,7 +301,7 @@ The core strategy: complete the majority of your coursework _outside_ your unive
 
 ### Certifications (Double as Degree Credit)
 
-Complete the following — each one covered in detail in the Certification Seeker's Ladder above:
+Complete the following each one covered in detail in the Certification Seeker's Ladder above:
 
 - CompTIA A+
 - Linux Essentials (LPI)
@@ -308,13 +311,12 @@ Complete the following — each one covered in detail in the Certification Seeke
 - CompTIA PenTest+
 
 ### Enrolling at WGU
-
-- Transfer your transcripts — high school diploma, completed certifications, and outside coursework.
+- Transfer your transcripts ; high school diploma, completed certifications, and outside coursework.
 - Enroll and complete your remaining coursework.
-- If you get stuck navigating the process, unofficial WGU communities (Discord and otherwise) are active and genuinely helpful — most people on this path aren't figuring it out alone.
+- If you get stuck navigating the process, unofficial WGU communities (Discord and otherwise) are active and genuinely helpful ; most people on this path aren't figuring it out alone.
 
 ---
 
 ## The Bottom Line
 
-None of these five paths is objectively "better" than the others — they optimize for different outcomes, and the right one depends entirely on what you're actually chasing: curiosity, a paycheck, bounty payouts, credibility, or a degree. What they all share is the same underlying truth about this field: nobody hands you competence. You build it, room by room, machine by machine, report by report — and the roadmap only works if you actually walk it.
+None of these five paths is objectively "better" than the others , they optimize for different outcomes, and the right one depends entirely on what you're actually chasing: curiosity, a paycheck, bounty payouts, credibility, or a degree. What they all share is the same underlying truth about this field: nobody hands you competence. You build it, room by room, machine by machine, report by report  and the roadmap only works if you actually walk it.
