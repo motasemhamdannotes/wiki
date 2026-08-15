@@ -1,5 +1,9 @@
 
+[🏠 Main Site](https://motasem-notes.net/) · [🛒 Store](https://shop.motasem-notes.net/) · [▶ YouTube](https://www.youtube.com/@MotasemHamdan) · [☕ Membership](https://buymeacoffee.com/notescatalog/membership)
 
+> Practitioner-grade cybersecurity notes, cert prep guides, and courses. All premium notes available at **[buymeacoffee.com/notescatalog/extras](https://buymeacoffee.com/notescatalog/extras)** or [shop.motasem-notes.net](shop.motasem-notes.net)
+
+> To access all the cyber security roadmaps by job title or certification, subscribe to the [membership](https://buymeacoffee.com/notescatalog/membership)
 # Where to Actually Start
 
 Cybersecurity has a discoverability problem. Ask ten different practitioners how they got started and you'll get ten different answers ; a CTF here, a certification there, a computer science degree somewhere in the mix. For a newcomer, that's not inspiring. It's paralyzing. There's no shortage of advice; there's a shortage of _direction_.
