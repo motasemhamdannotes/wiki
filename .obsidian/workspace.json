@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Career Guidance/The Complete Cybersecurity Roadmap.md",
+                "file": "Career Guidance/SOC Analyst Interview Templates.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Complete Cybersecurity Roadmap"
+              "title": "SOC Analyst Interview Templates"
             }
           }
         ]
@@ -190,8 +190,8 @@
   },
   "active": "7f51b4a8d3ca4804",
   "lastOpenFiles": [
-    "Offensive Security/Recon/Nmap Cheat Sheet.md",
     "Career Guidance/The Complete Cybersecurity Roadmap.md",
+    "Offensive Security/Recon/Nmap Cheat Sheet.md",
     "OSINT.md",
     "Tech/Programming/Django.md",
     "Tech/Programming/C Programming.md",
