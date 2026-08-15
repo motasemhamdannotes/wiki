@@ -91,7 +91,7 @@ If your goal is employment, not exploration, this path trades breadth for speed.
 ### 1. TCM Security : Practical Ethical Hacker Course (~2 months)
 
 - Register with TCM Security and subscribe.
-- TCP PNPT Notes
+- [TCM PNPT Study Notes](https://buymeacoffee.com/notescatalog/e/422421)
 - Complete **Practical Ethical Hacking**.
 - Optionally complete **Practical Web Hacking** for deeper web-focused skill.
 
@@ -103,13 +103,14 @@ If your goal is employment, not exploration, this path trades breadth for speed.
 
 ### 3. OSCP : PEN-200: Penetration Testing with Kali Linux (~3 months)
 
-This certification is close to a gold standard in offensive security — it's respected enough that it regularly bypasses standard HR keyword screening.
+This certification is close to a gold standard in offensive security , it's respected enough that it regularly bypasses standard HR keyword screening.
 
 - Enroll in the PEN-200 course through Offensive Security.
 - Purchase the 90-day lab access package.
+- [OSCP Study Notes](https://buymeacoffee.com/notescatalog/e/165578)
 - Study the course materials and Kali Linux documentation thoroughly.
 - Practice extensively in the lab, exploiting real vulnerabilities.
-- Review deliberately before the exam — don't wing this one.
+- Review deliberately before the exam , don't wing this one.
 - Schedule and sit the exam.
 - Pass it.
 
@@ -117,15 +118,14 @@ This certification is close to a gold standard in offensive security — it's re
 
 Finding vulnerabilities in open-source projects is more achievable than it sounds, and it's a genuine differentiator. Two candidates with identical certifications are not equal if one of them has a CVE credit demonstrating they can _apply_ what they learned, not just pass an exam on it.
 
-- Watch Tyler Ramsbey's walkthrough video on the CVE discovery process for a practical starting point.
 
-**Worth knowing:** communities built around this roadmap often offer free resume reviews or informal conversations with working ethical hackers — usually gated behind a Discord server and a scheduled appointment. If that kind of mentorship is available to you, take it. Free feedback from someone already doing the job is worth more than another course.
+**Worth knowing:** communities built around this roadmap often offer free resume reviews or informal conversations with working ethical hackersusually gated behind a Discord server and a scheduled appointment. If that kind of mentorship is available to you, take it. Free feedback from someone already doing the job is worth more than another course.
 
 ---
 
 ## Path 3: The Bug Bounty Hunter's Path
 
-Bug bounty hunting doesn't have a finish line. There's no single certificate or milestone that signals "you're ready now" — which is exactly why so many newcomers struggle to find their footing. This path is built to give that structure back.
+Bug bounty hunting doesn't have a finish line. There's no single certificate or milestone that signals "you're ready now" which is exactly why so many newcomers struggle to find their footing. This path is built to give that structure back.
 
 ### 1. Adopt the Hunter's Mindset
 
