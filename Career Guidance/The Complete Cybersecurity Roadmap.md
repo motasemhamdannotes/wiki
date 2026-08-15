@@ -6,24 +6,22 @@ This roadmap exists to fix that. Before you touch a single tool or sign up for a
 
 ## Before You Start: Which Path Is Right for You?
 
-| Path                     | Best For                                                          | What You're Optimizing For             |
-| ------------------------ | ----------------------------------------------------------------- | -------------------------------------- |
-| **Hobbyist Track**       | Curious beginners who want to explore without commitment pressure | Skill-building at your own pace        |
-| **Cyber Expressway**     | People who need a job in the field, fast                          | Speed to employment (~10 months)       |
-| **Bug Bounty Hunter**    | Self-directed learners drawn to independent, results-based work   | Real-world findings and payouts        |
-| **Certification Seeker** | People who want structured, employer-recognized validation        | Credibility and HR-checkbox compliance |
-| **Degree Pursuer**       | Those who want a formal Bachelor's behind their name              | Long-term credentialing and options    |
+| Path                    | Best For                                                          | What You're Optimizing For             |
+| ----------------------- | ----------------------------------------------------------------- | -------------------------------------- |
+| **Scouts**              | Curious beginners who want to explore without commitment pressure | Skill-building at your own pace        |
+| **Fast-Track**          | People who need a job in the field, fast                          | Speed to employment (~10 months)       |
+| **Bug Bounty Hunter**   | Self-directed learners drawn to independent, results-based work   | Real-world findings and payouts        |
+| **Certification Geeks** | People who want structured, employer-recognized validation        | Credibility and HR-checkbox compliance |
+| **Academics**           | Those who want a formal Bachelor's behind their name              | Long-term credentialing and options    |
 
-None of these paths are mutually exclusive — plenty of people start as hobbyists and drift into certifications once they realize they're serious. Treat this table as a starting compass, not a life sentence.
+None of these paths are mutually exclusive ; plenty of people start as hobbyists and drift into certifications once they realize they're serious. Treat this table as a starting compass, not a life sentence.
 
 ---
 
-## Path 1: The Hobbyist Track — Hacking for the Love of It
-
-If you're exploring cybersecurity purely out of curiosity — no job pressure, no exam deadline, just the itch to understand how systems break — this is your on-ramp. The goal here is simple: go from "script kiddie" (someone who runs tools without understanding them) to a practitioner who actually knows _why_ an exploit works.
+## Path 1: Scouts : Hacking for the Love of It
+If you're exploring cybersecurity purely out of curiosity ; no job pressure, no exam deadline, just the itch to understand how systems break , this is your on-ramp. The goal here is simple: go from "script kiddie" (someone who runs tools without understanding them) to a practitioner who actually knows _why_ an exploit works.
 
 ### Step 1: Learn the Basics on TryHackMe
-
 **Objective:** Build a foundational understanding of hacking concepts in a guided, low-pressure environment.
 
 - Sign up for a TryHackMe account.
@@ -58,7 +56,7 @@ This is, without much argument, the best free web security education available a
 
 Here's the shift that matters: TryHackMe holds your hand, HTB doesn't. That's intentional. Struggling through a machine without a walkthrough is where real problem-solving instincts get built.
 
-### Step 4: Keep Expanding — This Field Doesn't Sit Still
+### Step 4: Keep Expanding : This Field Doesn't Sit Still
 
 **Objective:** Stay current with evolving trends, tools, and techniques.
 
@@ -80,7 +78,7 @@ Cybersecurity punishes complacency. The tools and techniques that work today wil
 **Bug Bounty Programs:**
 
 - Register on platforms like HackerOne, Bugcrowd, or Synack.
-- Choose programs aligned with your interests — web, mobile, or network testing.
+- Choose programs aligned with your interests ; web, mobile, or network testing.
 - Report vulnerabilities ethically and within each program's disclosure guidelines.
 - Keep an eye on new programs and feedback on your submissions.
 
