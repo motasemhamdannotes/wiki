@@ -1,4 +1,4 @@
-- 2026-08-15T1127 · [[The Complete Cybersecurity Roadmap]]
+- 2026-08-15T1128 · [[The Complete Cybersecurity Roadmap]]
 - 2026-08-14T0929 · [[OSINT]]
 - 2026-08-14T0929 · [[Django]]
 - 2026-08-14T0928 · [[Basics]]

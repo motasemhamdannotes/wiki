@@ -129,29 +129,27 @@ Bug bounty hunting doesn't have a finish line. There's no single certificate or 
 
 ### 1. Adopt the Hunter's Mindset
 
-Before the technical stuff: bug bounty hunting rewards perseverance, creativity, and a refusal to quit. You will fail — repeatedly — before you find anything. Every rejected report and every dead-end is data, not a verdict on your ability.
+Before the technical stuff: bug bounty hunting rewards perseverance, creativity, and a refusal to quit. You will fail , repeatedly , before you find anything. Every rejected report and every dead-end is data, not a verdict on your ability.
 
 You don't need to be an expert programmer, but you do need to understand how code behaves well enough to spot where it misbehaves. And because new vulnerability classes and techniques emerge constantly, this isn't a field where you finish learning. Join forums, watch creators who publish their methodology, and stay in the conversation.
 
 ### 2. Build a Real Foundation
 
-If you're new to IT, start here — skipping this step just means you'll circle back to it later, frustrated. You need working knowledge of:
+If you're new to IT, start here , skipping this step just means you'll circle back to it later, frustrated. You need working knowledge of:
 
-- **Networking** — TCP/IP, DNS, HTTP.
-- **Web Technologies** — HTML, JavaScript, CSS, and server-side languages.
-- **Common Vulnerabilities** — the OWASP Top Ten, cold.
+- **Networking** : TCP/IP, DNS, HTTP.
+- **Web Technologies** : HTML, JavaScript, CSS, and server-side languages.
+- **Common Vulnerabilities** : the OWASP Top Ten, cold.
 
 All of this is available for free on TryHackMe:
-
 - Complete the **Complete Beginner** path.
 - Complete **Web Fundamentals**.
 - Explore further if curiosity pulls you there.
 
 ### 3. Choose Your First Program Carefully
-
 Don't start with Google or Facebook. Their bug bounty programs are picked over by thousands of far more experienced hunters, and you'll burn motivation faster than you build skill. Instead, start with lower-competition platforms like **OpenBugBounty**, where the learning curve is gentler and the field is thinner.
 
-Look for programs with a broad scope — multiple URLs, login systems, purchasing flows, search functionality — since a wider attack surface means more opportunities to practice. And read the program's policy before you touch anything; staying inside the rules isn't optional.
+Look for programs with a broad scope ; multiple URLs, login systems, purchasing flows, search functionality  since a wider attack surface means more opportunities to practice. And read the program's policy before you touch anything; staying inside the rules isn't optional.
 
 - Register on OpenBugBounty and pick a program with meaningful scope.
 - Work through relevant PortSwigger Academy paths as you go, including:
@@ -173,18 +171,17 @@ Look for programs with a broad scope — multiple URLs, login systems, purchasin
 
 ### 4. Understand the Four Phases of a Hunt
 
-- **Reconnaissance** — Map the attack surface and identify entry points.
-- **Scanning** — Use tools like Nmap and Burp Suite to surface weaknesses.
-- **Exploitation** — Prove impact, not just existence, once you find a vulnerability.
-- **Reporting** — Write it up clearly. A great find with a poor report gets triaged as a mediocre one.
+- **Reconnaissance** : Map the attack surface and identify entry points.
+- **Scanning** : Use tools like Nmap and Burp Suite to surface weaknesses.
+- **Exploitation** : Prove impact, not just existence, once you find a vulnerability.
+- **Reporting** : Write it up clearly. A great find with a poor report gets triaged as a mediocre one.
 
 ### 5. Start Small, Then Climb
+Chase the low-hanging fruit first . it builds real confidence, not false confidence:
 
-Chase the low-hanging fruit first — it builds real confidence, not false confidence:
-
-- **Cross-Site Scripting (XSS)** — injecting malicious scripts into pages viewed by others.
-- **Security Misconfigurations** — unnecessary services enabled, default credentials left active.
-- **Insecure Direct Object References (IDOR)** — accessing data you shouldn't by manipulating identifiers in the URL.
+- **Cross-Site Scripting (XSS)** : injecting malicious scripts into pages viewed by others.
+- **Security Misconfigurations** : unnecessary services enabled, default credentials left active.
+- **Insecure Direct Object References (IDOR)** : accessing data you shouldn't by manipulating identifiers in the URL.
 
 From there, the progression looks like this: start small on low-competition platforms → deepen your skills through PortSwigger Academy → take on more complex vulnerabilities on bigger programs → stay current on emerging techniques → collaborate wherever you can.
 
@@ -196,7 +193,7 @@ Collaboration accelerates everything. Partnering with more experienced hunters e
 
 Bug bounty hunting eats time if you let it. Protect yourself with structure:
 
-- **Set clear goals** for each session — a number of leads, a completed recon phase, whatever's concrete.
+- **Set clear goals** for each session : a number of leads, a completed recon phase, whatever's concrete.
 - **Time-box your work** to avoid burnout.
 - **Track your progress** so motivation has something to point to besides "did I find a bug today."
 
@@ -204,11 +201,11 @@ And be honest with yourself about the timeline: your first valid bug might take 
 
 ---
 
-## Path 4: The Certification Seeker's Ladder
+## Path 4: The Certification Geek
 
-Certifications won't make you a hacker on their own — no piece of paper does that — but they do two things well: they structure your learning, and they signal competence to employers who can't otherwise evaluate your skills directly. Think of this ladder as a way to build both knowledge and credibility at the same time. Pair every certification here with actual hands-on practice, or the paper becomes hollow.
+Certifications won't make you a hacker on their own , no piece of paper does that but they do two things well: they structure your learning, and they signal competence to employers who can't otherwise evaluate your skills directly. Think of this ladder as a way to build both knowledge and credibility at the same time. Pair every certification here with actual hands-on practice, or the paper becomes hollow.
 
-### 1. CompTIA A+ — Basic IT Skills
+### 1. CompTIA A+ : Basic IT Skills
 
 Covers foundational IT knowledge: hardware, software, networking, and troubleshooting. This is where most cybersecurity careers quietly begin, whether people admit it or not.
 
@@ -217,7 +214,7 @@ Covers foundational IT knowledge: hardware, software, networking, and troublesho
 - Pass Core 1.
 - Pass Core 2.
 
-### 2. Linux Essentials (LPI) — Linux Fundamentals
+### 2. Linux Essentials (LPI) : Linux Fundamentals
 
 Security tooling lives disproportionately on Linux. Skipping this step just means learning it the hard way later, mid-project.
 
@@ -225,7 +222,7 @@ Security tooling lives disproportionately on Linux. Skipping this step just mean
 - Study using resources like Shawn Powers' course material.
 - Pass the exam.
 
-### 3. CompTIA Network+ — Networking Knowledge
+### 3. CompTIA Network+ : Networking Knowledge
 
 You cannot secure what you don't understand. Network+ covers infrastructure, operations, and networking security concepts that show up constantly in later, harder material.
 
@@ -233,11 +230,12 @@ You cannot secure what you don't understand. Network+ covers infrastructure, ope
 - Study with Professor Messer.
 - Pass the exam.
 
-### 4. CompTIA Security+ — Cybersecurity Fundamentals
+### 4. CompTIA Security+ : Cybersecurity Fundamentals
 
 The most widely recognized entry-level security certification in the industry, and often a literal HR requirement for junior roles.
 
 - Purchase the Security+ voucher.
+- GET COMPTIA Security+
 - Study with Professor Messer.
 - Pass the exam.
 
