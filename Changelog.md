@@ -1,3 +1,4 @@
+- 2026-08-15T1123 · [[The Complete Cybersecurity Roadmap]]
 - 2026-08-14T0929 · [[OSINT]]
 - 2026-08-14T0929 · [[Django]]
 - 2026-08-14T0928 · [[Basics]]
@@ -22,4 +23,3 @@
 - 2026-07-26T1639 · [[PHP Programming]]
 - 2026-07-26T1639 · [[Javascript Notes]]
 - 2026-07-26T1638 · [[Java]]
-- 2026-07-26T1638 · [[Bash Programming Notes]]

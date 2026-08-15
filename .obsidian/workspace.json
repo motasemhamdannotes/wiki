@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Offensive Security/Recon/Nmap Cheat Sheet.md",
+                "file": "Career Guidance/The Complete Cybersecurity Roadmap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Nmap Cheat Sheet"
+              "title": "The Complete Cybersecurity Roadmap"
             }
           }
         ]
@@ -190,6 +190,8 @@
   },
   "active": "7f51b4a8d3ca4804",
   "lastOpenFiles": [
+    "Offensive Security/Recon/Nmap Cheat Sheet.md",
+    "Career Guidance/The Complete Cybersecurity Roadmap.md",
     "OSINT.md",
     "Tech/Programming/Django.md",
     "Tech/Programming/C Programming.md",
@@ -213,9 +215,7 @@
     "Offensive Security/Windows AD Pentesting/Active Directory Pentesting.md",
     "Offensive Security/Web Hacking/Web Hacking Cheat Sheet.md",
     "Offensive Security/Web Hacking/API Pentesting.md",
-    "Offensive Security/Recon/Nmap Cheat Sheet.md",
     "Offensive Security/Mobile Pentesting/Mobile Pentesting Tools Reference.md",
-    "Offensive Security/Mobile Pentesting/Android Pentesting.md",
     "Offensive Security/Recon",
     "Offensive Security/Exploitation",
     "DFIR",
