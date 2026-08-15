@@ -84,23 +84,24 @@ Cybersecurity punishes complacency. The tools and techniques that work today wil
 
 ---
 
-## Path 2: The Cyber Expressway — Job-Ready in Under 10 Months
+## Path 2: The Fast-Track Path : Job-Ready in Under 10 Months
 
-If your goal is employment, not exploration, this path trades breadth for speed. It's an aggressive timeline, inspired by security educator Tyler Ramsbey's public roadmap, and it comes with a caveat worth stating plainly: **there are no guarantees in this field.** What this path offers is the most efficient publicly available sequence to get you in front of hiring managers — not a promise of a job offer at the end of it.
+If your goal is employment, not exploration, this path trades breadth for speed. It's an aggressive timeline and it comes with a caveat worth stating plainly: **there are no guarantees in this field.** What this path offers is the most efficient publicly available sequence to get you in front of hiring managers — not a promise of a job offer at the end of it.
 
-### 1. TCM Security — Practical Ethical Hacker Course (~2 months)
+### 1. TCM Security : Practical Ethical Hacker Course (~2 months)
 
 - Register with TCM Security and subscribe.
+- TCP PNPT Notes
 - Complete **Practical Ethical Hacking**.
 - Optionally complete **Practical Web Hacking** for deeper web-focused skill.
 
-### 2. Hack The Box Academy — Penetration Tester Pathway (~2–3 months)
+### 2. Hack The Box Academy : Penetration Tester Pathway (~2–3 months)
 
 - Sign up through the HTB Academy platform.
 - Acquire credits and a voucher for course enrollment.
 - Complete the **Penetration Tester** job-role path.
 
-### 3. OSCP — PEN-200: Penetration Testing with Kali Linux (~3 months)
+### 3. OSCP : PEN-200: Penetration Testing with Kali Linux (~3 months)
 
 This certification is close to a gold standard in offensive security — it's respected enough that it regularly bypasses standard HR keyword screening.
 
