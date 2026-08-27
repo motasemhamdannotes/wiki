@@ -1,3 +1,6 @@
+- 2026-08-26T2048 · [[Kerberos Cheat Sheet]]
+- 2026-08-26T2048 · [[Active Directory Enumeration Cheat Sheet]]
+- 2026-08-26T2048 · [[Active Directory Pentesting]]
 - 2026-08-15T1131 · [[The Complete Cybersecurity Roadmap]]
 - 2026-08-14T0929 · [[OSINT]]
 - 2026-08-14T0929 · [[Django]]
@@ -20,6 +23,3 @@
 - 2026-07-26T1639 · [[Swift]]
 - 2026-07-26T1639 · [[Python]]
 - 2026-07-26T1639 · [[Powershell]]
-- 2026-07-26T1639 · [[PHP Programming]]
-- 2026-07-26T1639 · [[Javascript Notes]]
-- 2026-07-26T1638 · [[Java]]
