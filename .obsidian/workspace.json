@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Career Guidance/SOC Analyst Interview Templates.md",
+                "file": "Offensive Security/AI/AI Phishing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SOC Analyst Interview Templates"
+              "title": "AI Phishing"
             }
           }
         ]
@@ -190,6 +190,9 @@
   },
   "active": "7f51b4a8d3ca4804",
   "lastOpenFiles": [
+    "Career Guidance/SOC Analyst Interview Templates.md",
+    "Offensive Security/AI/AI Phishing.md",
+    "Offensive Security/AI",
     "Offensive Security/Windows AD Pentesting/Active Directory Enumeration Cheat Sheet.md",
     "Career Guidance/The Complete Cybersecurity Roadmap.md",
     "Offensive Security/Recon/Nmap Cheat Sheet.md",
@@ -214,8 +217,6 @@
     "Offensive Security/Data Exfiltration Cheat Sheet.md",
     "Offensive Security/Windows AD Pentesting/Kerberos Cheat Sheet.md",
     "Offensive Security/Windows AD Pentesting/Active Directory Pentesting.md",
-    "Offensive Security/Web Hacking/Web Hacking Cheat Sheet.md",
-    "Offensive Security/Web Hacking/API Pentesting.md",
     "Offensive Security/Recon",
     "Offensive Security/Exploitation",
     "DFIR",
@@ -226,7 +227,6 @@
     "Premium Notes and Courses/images",
     "Certifications/thm sal2 vs btl2 vs cdsa.html",
     "HTB Writeups/HTB Sorcery.html",
-    "HTB Writeups/HTB Snapped .html",
     "Premium Notes and Courses/images/2.png",
     "Premium Notes and Courses/images/3 .png",
     "Premium Notes and Courses/images/8.png",

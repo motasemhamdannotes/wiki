@@ -1,3 +1,4 @@
+- 2026-08-27T1723 · [[AI Phishing]]
 - 2026-08-26T2048 · [[Kerberos Cheat Sheet]]
 - 2026-08-26T2048 · [[Active Directory Enumeration Cheat Sheet]]
 - 2026-08-26T2048 · [[Active Directory Pentesting]]
@@ -22,4 +23,3 @@
 - 2026-07-26T2117 · [[Apache Tomcat]]
 - 2026-07-26T1639 · [[Swift]]
 - 2026-07-26T1639 · [[Python]]
-- 2026-07-26T1639 · [[Powershell]]
