@@ -1,4 +1,4 @@
-- 2026-08-27T1723 · [[AI Phishing]]
+- 2026-08-27T1726 · [[AI Phishing]]
 - 2026-08-26T2048 · [[Kerberos Cheat Sheet]]
 - 2026-08-26T2048 · [[Active Directory Enumeration Cheat Sheet]]
 - 2026-08-26T2048 · [[Active Directory Pentesting]]
