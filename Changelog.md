@@ -1,3 +1,5 @@
+- 2026-08-29T1126 · [[SQL Injection Cheat Sheet]]
+- 2026-08-27T2101 · [[Phishing]]
 - 2026-08-27T2008 · [[AI Phishing]]
 - 2026-08-26T2048 · [[Kerberos Cheat Sheet]]
 - 2026-08-26T2048 · [[Active Directory Enumeration Cheat Sheet]]
@@ -21,5 +23,3 @@
 - 2026-07-29T2107 · [[THM Writeups]]
 - 2026-07-28T1258 · [[HTB Writeups]]
 - 2026-07-26T2117 · [[Apache Tomcat]]
-- 2026-07-26T1639 · [[Swift]]
-- 2026-07-26T1639 · [[Python]]

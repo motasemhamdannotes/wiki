@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Offensive Security/AI/AI Phishing.md",
+                "file": "Offensive Security/Web Hacking/SQL Injection Cheat Sheet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI Phishing"
+              "title": "SQL Injection Cheat Sheet"
             }
           }
         ]
@@ -190,10 +190,11 @@
   },
   "active": "7f51b4a8d3ca4804",
   "lastOpenFiles": [
+    "Offensive Security/AI/AI Phishing.md",
+    "Offensive Security/Web Hacking/SQL Injection Cheat Sheet.md",
     "Offensive Security/Social Engineering/Phishing.md",
     "Offensive Security/Social Engineering",
     "Offensive Security/Cloud/Azure Pentesting.md",
-    "Offensive Security/AI/AI Phishing.md",
     "Career Guidance/SOC Analyst Interview Templates.md",
     "Offensive Security/AI",
     "Offensive Security/Windows AD Pentesting/Active Directory Enumeration Cheat Sheet.md",
@@ -217,7 +218,6 @@
     "SOC Analyst Notes/Phishing Detection.md",
     "SOC Analyst Notes/Blue Team Notes.md",
     "SOC Analyst Notes/Azure Security Center.md",
-    "Offensive Security/Data Exfiltration Cheat Sheet.md",
     "Offensive Security/Recon",
     "Offensive Security/Exploitation",
     "DFIR",
