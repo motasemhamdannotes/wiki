@@ -1,3 +1,4 @@
+- 2026-08-29T1139 · [[XSS Cheat Sheet]]
 - 2026-08-29T1130 · [[Web Hacking Cheat Sheet]]
 - 2026-08-29T1130 · [[API Pentesting]]
 - 2026-08-29T1130 · [[SQL Injection Cheat Sheet]]
@@ -22,4 +23,3 @@
 - 2026-08-01T0955 · [[DFIR Basics]]
 - 2026-07-29T2107 · [[THM Writeups]]
 - 2026-07-28T1258 · [[HTB Writeups]]
-- 2026-07-26T2117 · [[Apache Tomcat]]
