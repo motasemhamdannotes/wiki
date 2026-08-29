@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Offensive Security/Web Hacking/API Pentesting.md",
+                "file": "Offensive Security/Web Hacking/Web Hacking Cheat Sheet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "API Pentesting"
+              "title": "Web Hacking Cheat Sheet"
             }
           }
         ]
@@ -190,8 +190,9 @@
   },
   "active": "7f51b4a8d3ca4804",
   "lastOpenFiles": [
-    "Offensive Security/Web Hacking/Web Hacking Cheat Sheet.md",
     "Offensive Security/Web Hacking/SQL Injection Cheat Sheet.md",
+    "Offensive Security/Web Hacking/API Pentesting.md",
+    "Offensive Security/Web Hacking/Web Hacking Cheat Sheet.md",
     "Offensive Security/AI/AI Phishing.md",
     "Offensive Security/Social Engineering/Phishing.md",
     "Offensive Security/Social Engineering",
@@ -217,7 +218,6 @@
     "SOC Analyst Notes/Operating Systems Security/Linux/Linux Security.md",
     "SOC Analyst Notes/Operating Systems Security/MacOs/MacOS Security.md",
     "SOC Analyst Notes/Phishing Detection.md",
-    "SOC Analyst Notes/Blue Team Notes.md",
     "Offensive Security/Recon",
     "Offensive Security/Exploitation",
     "DFIR",
