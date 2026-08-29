@@ -362,5 +362,3 @@ SELECT name, setting FROM pg_settings WHERE name LIKE '%address%' OR name LIKE '
 - ✅ Use database activity monitoring (DAM) solutions
 
 ---
-
-**Disclaimer**: This cheat sheet is for educational purposes and authorized security testing only. Always obtain proper authorization before testing any system.
