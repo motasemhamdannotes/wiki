@@ -1,3 +1,4 @@
+Complete Web Hacking Study Notes From [here](https://buymeacoffee.com/notescatalog/e/280732)
 # Advanced SQL Injections Cheat Sheet
 
 ## PostgreSQL Database Interaction
