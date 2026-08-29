@@ -1,4 +1,4 @@
-- 2026-08-29T1139 · [[XSS Cheat Sheet]]
+- 2026-08-29T1139 · [[XSS-CSRF Cheat Sheet]]
 - 2026-08-29T1130 · [[Web Hacking Cheat Sheet]]
 - 2026-08-29T1130 · [[API Pentesting]]
 - 2026-08-29T1130 · [[SQL Injection Cheat Sheet]]
