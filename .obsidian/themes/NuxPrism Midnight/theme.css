@@ -1,0 +1,628 @@
+/* ============================================================
+   MIDNIGHT PRISM — tema para Obsidian (oscuro y claro)
+   Paleta espectral ordenada: cada color es un matiz distinto con
+   saturación y luminosidad parejas, sobre un fondo azul-negro.
+
+   Encabezados:  H1 violeta · H2 cian · H3 esmeralda · H4 ámbar
+                 H5 coral   · H6 pizarra
+   Acento:       violeta eléctrico (#8b7cf6)
+   Enlaces:      azul lavanda · Código: lila · Citas: teal
+   ============================================================ */
+
+
+:root {
+  /* Fuentes del sistema del usuario: Franklin Gothic para la interfaz,
+     Century Gothic para texto y encabezados. Sin peticiones de red. */
+  --default-font: "Franklin Gothic Medium", "Franklin Gothic", "Segoe UI", "Arial", sans-serif;
+  --title-font: "Century Gothic", "CenturyGothic", "Segoe UI", sans-serif;
+  --link-font: "Franklin Gothic Medium", "Franklin Gothic", "Segoe UI", sans-serif;
+  --h-font: "Franklin Gothic Medium", "Franklin Gothic", "Segoe UI", sans-serif;
+}
+
+body .modal {
+  border-radius: 18px;
+}
+
+.theme-dark {
+  /* ---- Rampa de superficies: 4 niveles con saltos de luminancia REALES,
+     para que lienzo, paneles y hover se distingan en cualquier monitor.
+       lienzo   #0a0c11  →  panel  #141924  →  hover  #1d2432
+     Los plugins (Kanux incluido) derivan sus tarjetas mezclando
+     secondary con primary, así que esta distancia es la que hace
+     visibles los checklist groups, sidebars y previews. ---- */
+  --background-primary: #0a0c11;
+  --background-primary-alt: #10141d;
+  --background-secondary: #141924;
+  --background-secondary-alt: #0e1119;
+  --background-accent: #000000;
+  --background-modifier-border: #2a3247;
+  --background-modifier-border-hover: #3d4763;
+  --background-modifier-active-hover: hsl(248deg 45% 60% / 16%);
+  --background-modifier-form-field: rgba(0, 0, 0, 0.38);
+  --background-modifier-form-field-highlighted: rgba(0, 0, 0, 0.26);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.45);
+  --background-modifier-success: #34d399;
+  --background-modifier-error: #4c1d24;
+  --background-modifier-error-rgb: 76, 29, 36;
+  --background-modifier-error-hover: #f43f5e;
+  --background-modifier-cover: rgba(0, 0, 0, 0.65);
+  --background-modifier-hover: #1d2432;
+
+  /* ---- Acento de la app: violeta eléctrico, hover coherente ---- */
+  --interactive-normal: #181e2b;
+  --interactive-hover: #232b3e;
+  --interactive-accent: #8b7cf6;
+  --interactive-accent-rgb: 139, 124, 246;
+  --interactive-accent-hover: #a598ff;
+  --text-on-accent: #ffffff;
+
+  /* ---- Texto ---- */
+  --text-normal: #dfe4f0;
+  --text-muted: #9aa3b5;
+  --text-faint: #6b7385;
+  --text-accent: #2dd4bf;
+  --text-accent-hover: #7df3e3;
+  --text-error: #fb7185;
+  --text-error-hover: #fda4af;
+  --text-highlight-bg: rgba(244, 114, 182, 0.28);
+  --text-selection: rgba(122, 162, 247, 0.25);
+
+  --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2);
+  --scrollbar-bg: rgba(255, 255, 255, 0.04);
+  --scrollbar-thumb-bg: rgba(255, 255, 255, 0.09);
+  --panel-border-color: #161b26;
+
+  /* ---- Color de código inline (unificado en toda la app) ---- */
+  --resaldao-color: #d8b4fe;
+  --tag-color: #38bdf8;
+
+  /* ---- Paleta con nombre: UN matiz por color, sin casi-duplicados ---- */
+  --gray-1: #64748b;
+  --red: #f43f5e;
+  --peach: #fb923c;
+  --aqua: #2dd4bf;
+  --purple: #c084fc;
+  --blue: #7aa2f7;
+  --green: #34d399;
+  --orange: #fb923c;
+  --magenta: #f472b6;
+  --altblue: #60a5fa;
+  --cyan: #22d3ee;
+  --yellow: #facc15;
+  --light-orange: #fdba74;
+  --lime: #a3e635;
+  --aquadark: #134e4a;
+  --lila: #d8b4fe;
+  --green-light: #2dd4bf;
+
+  /* ---- Encabezados: escalera espectral, cada nivel inconfundible ---- */
+  --text-title-h1: #c084fc; /* violeta   */
+  --text-title-h2: #22d3ee; /* cian      */
+  --text-title-h3: #34d399; /* esmeralda */
+  --text-title-h4: #fbbf24; /* ámbar     */
+  --text-title-h5: #fb7185; /* coral     */
+  --text-title-h6: #94a3b8; /* pizarra   */
+
+  --font-weight-title: 700;
+  --font-monospace: "Consolas", "Fira Code", "Source Code Pro", "Droid Sans Mono", "Monoid", "Arial", sans-serif;
+  --line-height-headers: 1.18;
+  --file-line-width: 1000px;
+
+  --search-match-color: #fde047;
+  --search-other-match-color: #fb923c;
+
+  --link-internal: #7aa2f7;
+
+  --inline-title-color: #cbd5e1;
+  --inline-title-glow: 0 0 10px rgba(139, 124, 246, 0.28), 0 0 18px rgba(34, 211, 238, 0.12);
+  --codeblock-bg: #121724;
+  --codeblock-text: #ccd5e8;
+}
+
+.theme-light {
+  /* ---- Rampa de superficies clara: mismos saltos perceptibles.
+       lienzo #fbfcfe  →  panel #e9edf5  →  hover #dde3ef ---- */
+  --background-primary: #fbfcfe;
+  --background-primary-alt: #f1f4f9;
+  --background-secondary: #e9edf5;
+  --background-secondary-alt: #f4f6fb;
+  --background-accent: #ffffff;
+  --background-modifier-border: #c3ccdd;
+  --background-modifier-border-hover: #a4b0c8;
+  --background-modifier-active-hover: hsl(248deg 55% 50% / 12%);
+  --background-modifier-form-field: #ffffff;
+  --background-modifier-form-field-highlighted: #ffffff;
+  --background-modifier-box-shadow: rgba(15, 23, 42, 0.12);
+  --background-modifier-success: #059669;
+  --background-modifier-error: #fde3e9;
+  --background-modifier-error-rgb: 253, 227, 233;
+  --background-modifier-error-hover: #e11d48;
+  --background-modifier-cover: rgba(15, 23, 42, 0.4);
+  --background-modifier-hover: #dde3ef;
+
+  --interactive-normal: #eef1f8;
+  --interactive-hover: #e0e6f2;
+  --interactive-accent: #6d5ae6;
+  --interactive-accent-rgb: 109, 90, 230;
+  --interactive-accent-hover: #5a46d6;
+  --text-on-accent: #ffffff;
+
+  --text-normal: #22283a;
+  --text-muted: #5a6478;
+  --text-faint: #8b93a8;
+  --text-accent: #0d9488;
+  --text-accent-hover: #0f766e;
+  --text-error: #e11d48;
+  --text-error-hover: #be123c;
+  --text-highlight-bg: rgba(236, 72, 153, 0.16);
+  --text-selection: rgba(90, 120, 220, 0.18);
+
+  --scrollbar-active-thumb-bg: rgba(15, 23, 42, 0.28);
+  --scrollbar-bg: rgba(15, 23, 42, 0.05);
+  --scrollbar-thumb-bg: rgba(15, 23, 42, 0.14);
+  --panel-border-color: #dbe1ee;
+
+  --resaldao-color: #7c3aed;
+  --tag-color: #0284c7;
+
+  --gray-1: #64748b;
+  --red: #e11d48;
+  --peach: #ea580c;
+  --aqua: #0d9488;
+  --purple: #9333ea;
+  --blue: #3d6ae0;
+  --green: #059669;
+  --orange: #ea580c;
+  --magenta: #db2777;
+  --altblue: #2563eb;
+  --cyan: #0891b2;
+  --yellow: #ca8a04;
+  --light-orange: #f97316;
+  --lime: #65a30d;
+  --aquadark: #0f766e;
+  --lila: #7c3aed;
+  --green-light: #0d9488;
+
+  /* Misma escalera espectral, oscurecida para leerse sobre claro. */
+  --text-title-h1: #7e22ce; /* violeta   */
+  --text-title-h2: #0891b2; /* cian      */
+  --text-title-h3: #059669; /* esmeralda */
+  --text-title-h4: #d97706; /* ambar     */
+  --text-title-h5: #e11d48; /* coral     */
+  --text-title-h6: #64748b; /* pizarra   */
+
+  --font-weight-title: 700;
+  --font-monospace: "Consolas", "Fira Code", "Source Code Pro", "Droid Sans Mono", "Monoid", "Arial", sans-serif;
+  --line-height-headers: 1.18;
+  --file-line-width: 1000px;
+
+  --search-match-color: #fde047;
+  --search-other-match-color: #f59e0b;
+
+  --link-internal: #3d6ae0;
+
+  --inline-title-color: #3f4a63;
+  --inline-title-glow: 0 0 10px rgba(109, 90, 230, 0.18), 0 0 18px rgba(8, 145, 178, 0.08);
+  --codeblock-bg: #eef1f8;
+  --codeblock-text: #334155;
+}
+
+/* ============ search ============ */
+
+.search-result-file-matched-text {
+  color: #0d0f14;
+  background-color: var(--search-match-color);
+  box-shadow: none;
+}
+
+.cm-s-obsidian span.obsidian-search-match-highlight {
+  background-color: var(--search-match-color);
+  box-shadow: none;
+  color: #0d0f14;
+}
+
+.obsidian-search-match-highlight * {
+  color: #1f2430 !important;
+}
+
+.markdown-rendered .search-highlight > div {
+  opacity: 1;
+  box-shadow: 0 0.2em 0 0 var(--search-other-match-color);
+}
+
+.markdown-rendered .search-highlight > div.is-active {
+  box-shadow: 0 0.2em 0 0 var(--search-match-color);
+}
+
+.search-result-file-title {
+  color: var(--blue);
+}
+
+/* ============ headings preview-view ============ */
+
+/* Titulares en MAYUSCULAS y negrita (el look que daba Bungee),
+   ahora logrado con Century Gothic. */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6,
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6,
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.markdown-preview-view h1 {
+  font-family: var(--h-font) !important;
+  font-weight: var(--font-weight-title);
+  color: var(--text-title-h1);
+  margin-top: 0;
+  line-height: var(--line-height-headers);
+}
+
+.markdown-preview-view h2 {
+  font-family: var(--h-font);
+  font-weight: var(--font-weight-title);
+  color: var(--text-title-h2);
+  line-height: var(--line-height-headers);
+}
+
+.markdown-preview-view h3 {
+  font-family: var(--h-font);
+  font-weight: var(--font-weight-title);
+  color: var(--text-title-h3);
+  line-height: var(--line-height-headers);
+}
+
+.markdown-preview-view h4 {
+  font-family: var(--h-font);
+  font-weight: var(--font-weight-title);
+  color: var(--text-title-h4);
+  line-height: var(--line-height-headers);
+}
+
+.markdown-preview-view h5 {
+  font-family: var(--h-font);
+  font-weight: var(--font-weight-title);
+  color: var(--text-title-h5);
+  line-height: var(--line-height-headers);
+}
+
+.markdown-preview-view h6 {
+  font-family: var(--h-font);
+  font-weight: var(--font-weight-title);
+  color: var(--text-title-h6);
+  line-height: var(--line-height-headers);
+}
+
+/* ============ headings editor ============ */
+
+.cm-header-1 {
+  font-family: var(--h-font) !important;
+  font-weight: var(--font-weight-title) !important;
+  color: var(--text-title-h1);
+  line-height: var(--line-height-headers);
+}
+
+.cm-header-2 {
+  font-family: var(--h-font);
+  font-weight: var(--font-weight-title) !important;
+  color: var(--text-title-h2);
+  line-height: var(--line-height-headers);
+}
+
+.cm-header-3 {
+  font-family: var(--h-font);
+  font-weight: var(--font-weight-title) !important;
+  color: var(--text-title-h3);
+  line-height: var(--line-height-headers);
+}
+
+.cm-header-4 {
+  font-family: var(--h-font);
+  font-weight: var(--font-weight-title) !important;
+  color: var(--text-title-h4);
+  line-height: var(--line-height-headers);
+}
+
+.cm-header-5 {
+  font-family: var(--h-font);
+  font-weight: var(--font-weight-title) !important;
+  color: var(--text-title-h5);
+  line-height: var(--line-height-headers);
+}
+
+.cm-header-6 {
+  font-family: var(--h-font);
+  font-weight: var(--font-weight-title) !important;
+  color: var(--text-title-h6);
+  line-height: var(--line-height-headers);
+}
+
+/* ============ links ============ */
+/* Un solo idioma: azul lavanda en reposo, más claro al pasar el mouse. */
+
+a,
+.markdown-preview-view .internal-link,
+.internal-link {
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--blue);
+}
+
+a:hover,
+.markdown-preview-view .internal-link:hover {
+  text-decoration: underline;
+  color: #b4ccff;
+}
+
+/* ============ status bar ============ */
+
+.status-bar,
+.side-dock.mod-right,
+.side-dock.mod-left {
+  border-color: var(--panel-border-color);
+  border-width: 1px;
+}
+
+.status-bar {
+  --bar-vertical-padding: 4px;
+  --bar-height: calc(22px + (var(--bar-vertical-padding) * 2));
+  line-height: 20px;
+  padding: 0 20px;
+  height: var(--bar-height);
+  max-height: var(--bar-height);
+  min-height: var(--bar-height);
+  overflow: hidden;
+}
+
+.status-bar-item {
+  margin: auto 0;
+}
+
+.status-bar-item > * {
+  padding-top: var(--bar-vertical-padding) !important;
+  padding-bottom: var(--bar-vertical-padding) !important;
+}
+
+/* ============ code blocks ============ */
+
+pre[class*="language-"] {
+  overflow: hidden;
+}
+
+code[class*="language-"] {
+  display: block;
+  padding: 0;
+  overflow: auto;
+}
+
+.markdown-preview-view pre {
+  padding: 12px 12px;
+}
+
+/* ============ ancho de contenido ============ */
+
+.markdown-source-view.mod-cm6.is-readable-line-width:not(.is-rtl) .cm-contentContainer {
+  max-width: 1000px;
+}
+
+.markdown-source-view.mod-cm6.is-line-wrap.is-readable-line-width .cm-content {
+  max-width: 1000px;
+}
+
+.markdown-source-view.mod-cm6.is-line-wrap.is-readable-line-width .cm-line:not(.HyperMD-table-row) {
+  max-width: 1000px;
+}
+
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  max-width: 1000px;
+}
+
+.markdown-source-view.is-readable-line-width .CodeMirror {
+  max-width: 1000px;
+}
+
+/* ============ #tags ============ */
+
+a.tag {
+  color: var(--tag-color);
+  font-size: 15px;
+}
+
+.cm-s-obsidian span.cm-hashtag {
+  color: var(--tag-color);
+  text-decoration: underline;
+}
+
+/* ============ blockquotes ============ */
+
+.markdown-preview-view blockquote {
+  border: solid var(--green-light);
+  border-width: 0 0 0 3px;
+  background-color: var(--background-primary);
+  color: var(--green-light);
+  font-style: italic;
+}
+
+.cm-s-obsidian span.cm-quote {
+  color: var(--green-light);
+  font-style: italic;
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  border: solid var(--green-light);
+  border-width: 0 0 0 3px;
+  background-color: var(--background-primary);
+}
+
+/* ============ detalles ============ */
+
+/* Código inline: el MISMO lila en edición y en lectura. */
+.cm-s-obsidian span.cm-inline-code,
+code,
+.markdown-rendered code {
+  color: var(--resaldao-color);
+}
+
+.cm-s-obsidian span.cm-formatting-link {
+  color: var(--resaldao-color);
+}
+
+.cm-line {
+  line-height: 1.5em;
+}
+
+.cm-s-obsidian .HyperMD-codeblock {
+  line-height: 1.4;
+}
+
+.nav-file-title,
+.nav-folder-title {
+  color: #7b8496;
+}
+
+.footnotes p {
+  margin: 0;
+}
+
+.frontmatter-container .tag,
+.frontmatter-container .frontmatter-alias {
+  margin: 0;
+}
+
+/* ============ explorador de archivos ============ */
+
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+  outline: 1px solid color-mix(in srgb, var(--interactive-accent) 45%, transparent);
+}
+
+body:not(.is-grabbing) .nav-file-title.is-selected:hover,
+.nav-file-title.is-selected:hover,
+.nav-file-title.is-selected {
+  background-color: var(--nav-item-background-active, var(--background-modifier-active-hover));
+}
+
+div[data-path='0attachments'],
+div[data-path='0attachments'] + div.nav-folder-children {
+  display: none;
+}
+
+.collapse-icon svg.svg-icon,
+.is-collapsed .collapse-icon svg.svg-icon {
+  color: var(--blue);
+}
+
+/* === Título inline dentro del archivo (editable) === */
+
+.inline-title {
+  color: var(--inline-title-color) !important;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-shadow: var(--inline-title-glow);
+  margin-top: 12px;
+  margin-bottom: 24px;
+  font-style: normal;
+  position: relative;
+  animation: floatTitle 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  will-change: transform, text-shadow;
+  font-family: var(--title-font), sans-serif !important;
+}
+
+@keyframes floatTitle {
+  0% { transform: translateY(0); }
+  25% { transform: translateY(-6px); }
+  50% { transform: translateY(-8px); }
+  75% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Respeto por movimiento reducido: los adornos animados se detienen. */
+@media (prefers-reduced-motion: reduce) {
+  .inline-title {
+    animation: none;
+  }
+}
+
+/* --- ARMONÍA GLOBAL (Lectura y Edición usan los mismos valores) --- */
+
+body.theme-dark {
+  --h1-color: var(--text-title-h1);
+  --h2-color: var(--text-title-h2);
+  --h3-color: var(--text-title-h3);
+  --h4-color: var(--text-title-h4);
+  --h5-color: var(--text-title-h5);
+  --h6-color: var(--text-title-h6);
+
+  /* Texto con un matiz azulado sutil, nada de gris muerto. */
+  --text-normal: #dfe4f0;
+  --text-muted: #9aa3b5;
+
+  /* Negrita ámbar, cursiva azul cielo: se distinguen entre sí y del texto. */
+  --text-italic: #93c5fd;
+  --text-bold: #fbbf24;
+
+  /* Enlaces consistentes con el resto del tema. */
+  --link-color: #7aa2f7;
+  --link-color-hover: #b4ccff;
+}
+
+body.theme-light {
+  --h1-color: var(--text-title-h1);
+  --h2-color: var(--text-title-h2);
+  --h3-color: var(--text-title-h3);
+  --h4-color: var(--text-title-h4);
+  --h5-color: var(--text-title-h5);
+  --h6-color: var(--text-title-h6);
+
+  --text-normal: #22283a;
+  --text-muted: #5a6478;
+
+  --text-italic: #2f6bdc;
+  --text-bold: #b45309;
+
+  --link-color: #3d6ae0;
+  --link-color-hover: #274bb5;
+}
+
+/* El editor (Live Preview) usa exactamente las mismas variables y fuente que Lectura. */
+.markdown-source-view.mod-cm6 .cm-header-1, .markdown-rendered h1 { color: var(--h1-color) !important; font-family: var(--h-font) !important; }
+.markdown-source-view.mod-cm6 .cm-header-2, .markdown-rendered h2 { color: var(--h2-color) !important; font-family: var(--h-font) !important; }
+.markdown-source-view.mod-cm6 .cm-header-3, .markdown-rendered h3 { color: var(--h3-color) !important; font-family: var(--h-font) !important; }
+.markdown-source-view.mod-cm6 .cm-header-4, .markdown-rendered h4 { color: var(--h4-color) !important; font-family: var(--h-font) !important; }
+.markdown-source-view.mod-cm6 .cm-header-5, .markdown-rendered h5 { color: var(--h5-color) !important; font-family: var(--h-font) !important; }
+.markdown-source-view.mod-cm6 .cm-header-6, .markdown-rendered h6 { color: var(--h6-color) !important; font-family: var(--h-font) !important; }
+
+/* Negritas y cursivas coloreadas en Lectura y Edición. */
+strong, .cm-strong {
+  color: var(--text-bold) !important;
+  font-weight: 600 !important;
+}
+
+em, .cm-em {
+  color: var(--text-italic) !important;
+}
+
+/* Bloques de código idénticos en Edición y Lectura, y un paso más claros
+   que el lienzo para que el bloque se recorte con nitidez. */
+.markdown-source-view.mod-cm6 .HyperMD-codeblock,
+.markdown-rendered pre code {
+  background-color: var(--codeblock-bg) !important;
+  color: var(--codeblock-text) !important;
+}
