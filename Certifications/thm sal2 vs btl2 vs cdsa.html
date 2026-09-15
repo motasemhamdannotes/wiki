@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ═══════════════════════════════════════════════
+       EDIT THIS: Page title
+  ═══════════════════════════════════════════════ -->
+  <title>SYSTEM://THM SAL2 vs BTL2 vs HTB CDSA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:ital,wght@0,300;0,400;0,600;1,400&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           DESIGN TOKENS                      ║
+       ╚══════════════════════════════════════════════╝ */
+    :root {
+      /* Core palette */
+      --cp-void:        #05050a;
+      --cp-deep:        #0a0a12;
+      --cp-surface:     #0d0d18;
+      --cp-surface-2:   #12121f;
+      --cp-surface-3:   #181828;
+      --cp-border:      #1e1e35;
+
+      /* Neon accents */
+      --cp-cyan:        #00f5ff;
+      --cp-cyan-dim:    #007a80;
+      --cp-cyan-glow:   rgba(0, 245, 255, 0.25);
+      --cp-cyan-muted:  rgba(0, 245, 255, 0.08);
+
+      --cp-magenta:     #ff0080;
+      --cp-magenta-dim: #7a003d;
+      --cp-magenta-glow: rgba(255, 0, 128, 0.25);
+
+      --cp-green:       #39ff14;
+      --cp-green-dim:   #1a7a08;
+      --cp-green-glow:  rgba(57, 255, 20, 0.2);
+
+      --cp-amber:       #ffb800;
+      --cp-amber-glow:  rgba(255, 184, 0, 0.2);
+
+      /* Text */
+      --cp-text:        #c8d8e8;
+      --cp-text-muted:  #6a7f94;
+      --cp-text-dim:    #3a4f60;
+
+      /* Typography */
+      --font-display: 'Orbitron', 'Courier New', monospace;
+      --font-body:    'Exo 2', 'Segoe UI', sans-serif;
+      --font-mono:    'Share Tech Mono', 'Courier New', monospace;
+
+      /* Spacing — mobile-first (tighter base) */
+      --sp-xs:  0.35rem;
+      --sp-sm:  0.7rem;
+      --sp-md:  1.2rem;
+      --sp-lg:  2rem;
+      --sp-xl:  3rem;
+
+      /* Layout */
+      --max-width:  840px;
+      --radius:     4px;
+      --radius-lg:  8px;
+      --transition: all 0.2s ease;
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           GLOBAL RESET & BASE               ║
+       ╚══════════════════════════════════════════════╝ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background: var(--cp-void);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cp-void);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* CRT scanlines overlay — entire page */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.07) 2px,
+        rgba(0, 0, 0, 0.07) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* Circuit grid background */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--cp-void); }
+    ::-webkit-scrollbar-thumb {
+      background: var(--cp-cyan-dim);
+      border-radius: 2px;
+    }
+    ::-webkit-scrollbar-thumb:hover { background: var(--cp-cyan); }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           TOP BAR / HEADER                  ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      width: 100%;
+      background: rgba(5, 5, 10, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cp-cyan-dim);
+      box-shadow: 0 1px 20px var(--cp-cyan-glow);
+      padding: 0.6rem var(--sp-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-sm);
+    }
+
+    .cp-topbar-left {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-sm);
+      min-width: 0;
+    }
+
+    /* Blinking status dot */
+    .cp-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cp-green);
+      box-shadow: 0 0 8px var(--cp-green);
+      flex-shrink: 0;
+      animation: blink-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes blink-dot {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.2; }
+    }
+
+    .cp-topbar-brand {
+      font-family: var(--font-display);
+      font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+      font-weight: 900;
+      letter-spacing: 0.15em;
+      color: var(--cp-cyan);
+      text-shadow: 0 0 12px var(--cp-cyan-glow);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cp-topbar-brand span { color: var(--cp-magenta); }
+
+    /* EDIT: category tag */
+    .cp-topbar-tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--cp-text-dim);
+      border: 1px solid var(--cp-border);
+      padding: 0.15em 0.5em;
+      border-radius: var(--radius);
+      white-space: nowrap;
+      display: none; /* hidden on very small screens */
+    }
+
+    @media (min-width: 400px) {
+      .cp-topbar-tag { display: inline; }
+    }
+
+    .cp-topbar-right {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--cp-text-dim);
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           MAIN CONTENT WRAPPER              ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body {
+      position: relative;
+      z-index: 1;
+      font-family:  var(--font-body);
+      font-size:    clamp(0.95rem, 2.5vw, 1.05rem);
+      line-height:  1.8;
+      color:        var(--cp-text);
+      background:   var(--cp-surface);
+      max-width:    var(--max-width);
+      margin:       0 auto;
+      padding:      var(--sp-lg) var(--sp-md);
+      min-height:   100vh;
+
+      /* Left cyan accent line */
+      border-left:  2px solid var(--cp-cyan-dim);
+      border-right: 2px solid var(--cp-magenta-dim);
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           HEADINGS                          ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body h1, .cp-body h2, .cp-body h3,
+    .cp-body h4, .cp-body h5, .cp-body h6 {
+      font-family:    var(--font-display);
+      line-height:    1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top:     var(--sp-xl);
+      margin-bottom:  var(--sp-md);
+    }
+
+    /* H1 — Glitch effect */
+    .cp-body h1 {
+      font-size:   clamp(1.6rem, 5vw, 2.8rem);
+      font-weight: 900;
+      color:       var(--cp-cyan);
+      text-shadow:
+        0 0 20px var(--cp-cyan-glow),
+        0 0 60px rgba(0,245,255,0.1);
+      margin-top:  0;
+      position:    relative;
+      padding-bottom: var(--sp-sm);
+    }
+
+    /* Glitch underline bar */
+    .cp-body h1::after {
+      content:  '';
+      display:  block;
+      height:   3px;
+      width:    100%;
+      margin-top: var(--sp-xs);
+      background: linear-gradient(
+        90deg,
+        var(--cp-cyan),
+        var(--cp-magenta) 60%,
+        transparent
+      );
+      animation: glitch-bar 4s ease-in-out infinite;
+    }
+
+    @keyframes glitch-bar {
+      0%, 90%, 100% { transform: scaleX(1); opacity: 1; }
+      92%            { transform: scaleX(0.95) translateX(4px); opacity: 0.8; }
+      94%            { transform: scaleX(1.02) translateX(-3px); opacity: 1; }
+      96%            { transform: scaleX(0.98) translateX(2px); opacity: 0.9; }
+    }
+
+    /* Glitch text flicker on h1 */
+    .cp-body h1 {
+      animation: glitch-text 6s ease-in-out infinite;
+    }
+
+    @keyframes glitch-text {
+      0%, 88%, 100% {
+        text-shadow: 0 0 20px var(--cp-cyan-glow), 0 0 60px rgba(0,245,255,0.1);
+        transform: none;
+      }
+      90% {
+        text-shadow:
+          -3px 0 var(--cp-magenta),
+          3px 0 var(--cp-cyan),
+          0 0 20px var(--cp-cyan-glow);
+        transform: skewX(-1deg);
+      }
+      92% {
+        text-shadow: 0 0 20px var(--cp-cyan-glow);
+        transform: none;
+      }
+      94% {
+        text-shadow:
+          2px 0 var(--cp-magenta),
+          -2px 0 var(--cp-cyan);
+        transform: skewX(0.5deg);
+      }
+    }
+
+    /* H2 */
+    .cp-body h2 {
+      font-size:  clamp(1.2rem, 3.5vw, 1.8rem);
+      color:      var(--cp-cyan);
+      position:   relative;
+      padding:    var(--sp-sm) var(--sp-md);
+      background: var(--cp-cyan-muted);
+      border-left: 3px solid var(--cp-cyan);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .cp-body h2::before {
+      content:     '// ';
+      color:       var(--cp-cyan-dim);
+      font-family: var(--font-mono);
+      font-size:   0.8em;
+    }
+
+    /* H3 */
+    .cp-body h3 {
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      color:     var(--cp-magenta);
+      text-shadow: 0 0 12px var(--cp-magenta-glow);
+    }
+
+    .cp-body h3::before {
+      content:     '> ';
+      font-family: var(--font-mono);
+      color:       var(--cp-magenta-dim);
+      font-size:   0.9em;
+    }
+
+    /* H4–H6 */
+    .cp-body h4 {
+      font-size: 1.05rem;
+      color:     var(--cp-amber);
+      letter-spacing: 0.1em;
+    }
+    .cp-body h4::before { content: '## '; font-family: var(--font-mono); color: var(--cp-text-dim); font-size: 0.8em; }
+
+    .cp-body h5 { font-size: 0.95rem; color: var(--cp-text); }
+    .cp-body h6 { font-size: 0.85rem; color: var(--cp-text-muted); }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           PARAGRAPHS & INLINE               ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body p {
+      margin-bottom: var(--sp-md);
+      font-weight:   300;
+      color:         var(--cp-text);
+    }
+
+    .cp-body p:last-child { margin-bottom: 0; }
+
+    .cp-body strong, .cp-body b {
+      color:       var(--cp-cyan);
+      font-weight: 600;
+    }
+
+    .cp-body em, .cp-body i {
+      color:      var(--cp-text-muted);
+      font-style: italic;
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           LINKS                             ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body a {
+      color:           var(--cp-cyan);
+      text-decoration: none;
+      border-bottom:   1px dashed var(--cp-cyan-dim);
+      transition:      var(--transition);
+      font-weight:     600;
+      font-family:     var(--font-mono);
+      font-size:       0.95em;
+    }
+
+    .cp-body a:hover {
+      color:        var(--cp-cyan);
+      border-color: var(--cp-cyan);
+      text-shadow:  0 0 10px var(--cp-cyan-glow);
+      background:   var(--cp-cyan-muted);
+      padding:      0 0.2em;
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           HORIZONTAL RULE                   ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--cp-magenta),
+        var(--cp-cyan),
+        transparent
+      );
+      margin: var(--sp-xl) 0;
+      position: relative;
+    }
+
+    .cp-body hr::before {
+      content:    '◈';
+      position:   absolute;
+      left:       50%;
+      top:        50%;
+      transform:  translate(-50%, -50%);
+      color:      var(--cp-cyan);
+      font-size:  0.9rem;
+      background: var(--cp-surface);
+      padding:    0 var(--sp-sm);
+      text-shadow: 0 0 10px var(--cp-cyan-glow);
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           BLOCKQUOTE                        ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body blockquote {
+      position:     relative;
+      margin:       var(--sp-lg) 0;
+      padding:      var(--sp-md) var(--sp-lg);
+      background:   rgba(255, 0, 128, 0.05);
+      border-left:  3px solid var(--cp-magenta);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color:        var(--cp-text-muted);
+      font-style:   italic;
+
+      /* Corner brackets */
+      outline: 1px solid rgba(255, 0, 128, 0.15);
+    }
+
+    /* Top-right corner bracket */
+    .cp-body blockquote::before {
+      content:    '⌝';
+      position:   absolute;
+      top:        -0.6rem;
+      right:      0.5rem;
+      font-size:  1.8rem;
+      color:      var(--cp-magenta);
+      opacity:    0.5;
+      line-height: 1;
+    }
+
+    .cp-body blockquote::after {
+      content:    '⌞';
+      position:   absolute;
+      bottom:     -0.8rem;
+      left:       0.5rem;
+      font-size:  1.8rem;
+      color:      var(--cp-magenta);
+      opacity:    0.5;
+      line-height: 1;
+    }
+
+    .cp-body blockquote p { margin: 0; }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           LISTS                             ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body ul, .cp-body ol {
+      margin:       var(--sp-md) 0;
+      padding-left: var(--sp-lg);
+    }
+
+    .cp-body li { margin-bottom: var(--sp-xs); }
+
+    /* Unordered */
+    .cp-body ul { list-style: none; padding-left: var(--sp-md); }
+
+    .cp-body ul > li {
+      position:    relative;
+      padding-left: var(--sp-lg);
+    }
+
+    .cp-body ul > li::before {
+      content:   '▶';
+      position:  absolute;
+      left:      0;
+      color:     var(--cp-cyan);
+      font-size: 0.55em;
+      top:       0.45em;
+      text-shadow: 0 0 6px var(--cp-cyan-glow);
+    }
+
+    .cp-body ul ul > li::before {
+      content: '◈';
+      color:   var(--cp-magenta);
+      font-size: 0.5em;
+      top: 0.5em;
+    }
+
+    .cp-body ul ul ul > li::before {
+      content: '─';
+      color:   var(--cp-text-dim);
+      font-size: 0.8em;
+    }
+
+    /* Ordered */
+    .cp-body ol { list-style: decimal; }
+    .cp-body ol li::marker {
+      color:       var(--cp-cyan);
+      font-family: var(--font-mono);
+      font-size:   0.9em;
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           CODE                              ║
+       ╚══════════════════════════════════════════════╝ */
+
+    /* Inline code */
+    .cp-body code {
+      font-family:  var(--font-mono);
+      font-size:    0.88em;
+      color:        var(--cp-green);
+      background:   rgba(57, 255, 20, 0.07);
+      border:       1px solid var(--cp-green-dim);
+      padding:      0.1em 0.4em;
+      border-radius: var(--radius);
+      white-space:  nowrap;
+      text-shadow:  0 0 6px var(--cp-green-glow);
+    }
+
+    /* Code block */
+    .cp-body pre {
+      background:    var(--cp-surface-2);
+      border:        1px solid var(--cp-border);
+      border-top:    2px solid var(--cp-cyan);
+      border-radius: var(--radius-lg);
+      padding:       var(--sp-lg);
+      overflow-x:    auto;
+      margin:        var(--sp-lg) 0;
+      position:      relative;
+      box-shadow:
+        0 0 0 1px rgba(0,245,255,0.05),
+        0 8px 32px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(0,245,255,0.08);
+
+      /* Subtle glow around the block */
+      filter: drop-shadow(0 0 8px rgba(0,245,255,0.05));
+    }
+
+    /* Terminal header bar */
+    .cp-body pre::before {
+      content:     'TERMINAL://EXEC';
+      display:     block;
+      font-family: var(--font-mono);
+      font-size:   0.6rem;
+      letter-spacing: 0.2em;
+      color:       var(--cp-cyan-dim);
+      margin-bottom: var(--sp-sm);
+      padding-bottom: var(--sp-sm);
+      border-bottom: 1px solid var(--cp-border);
+    }
+
+    .cp-body pre code {
+      background:  transparent;
+      border:      none;
+      padding:     0;
+      color:       var(--cp-green);
+      font-size:   0.9rem;
+      line-height: 1.7;
+      white-space: pre;
+      text-shadow: 0 0 4px var(--cp-green-glow);
+    }
+
+    /* Blinking cursor at end of code blocks */
+    .cp-body pre::after {
+      content:    '█';
+      color:      var(--cp-cyan);
+      font-family: var(--font-mono);
+      font-size:   0.85rem;
+      display:    inline-block;
+      animation:  cursor-blink 1.1s step-end infinite;
+      margin-left: 2px;
+      opacity:    0.7;
+    }
+
+    @keyframes cursor-blink {
+      0%, 100% { opacity: 0.7; }
+      50%       { opacity: 0; }
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           TABLES                            ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body table {
+      width:           100%;
+      border-collapse: collapse;
+      margin:          var(--sp-lg) 0;
+      font-size:       0.9rem;
+      font-family:     var(--font-mono);
+      border:          1px solid var(--cp-border);
+      border-radius:   var(--radius-lg);
+      overflow:        hidden;
+      box-shadow:      0 0 20px rgba(0,245,255,0.05);
+    }
+
+    .cp-body thead {
+      background: linear-gradient(135deg, #0a1520, #0d1a2a);
+      border-bottom: 2px solid var(--cp-cyan);
+    }
+
+    .cp-body thead th {
+      font-family:    var(--font-display);
+      font-size:      0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color:          var(--cp-cyan);
+      padding:        var(--sp-sm) var(--sp-md);
+      text-align:     left;
+      text-shadow:    0 0 8px var(--cp-cyan-glow);
+    }
+
+    .cp-body tbody tr {
+      background:  var(--cp-surface-2);
+      transition:  var(--transition);
+      border-bottom: 1px solid var(--cp-border);
+    }
+
+    .cp-body tbody tr:nth-child(even) {
+      background: var(--cp-surface-3);
+    }
+
+    .cp-body tbody tr:hover {
+      background:  rgba(0, 245, 255, 0.05);
+      box-shadow:  inset 3px 0 0 var(--cp-cyan);
+    }
+
+    .cp-body td {
+      padding:       var(--sp-sm) var(--sp-md);
+      color:         var(--cp-text);
+      vertical-align: top;
+    }
+
+    /* Mobile table scroll */
+    @media (max-width: 520px) {
+      .cp-body table { display: block; overflow-x: auto; }
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           IMAGES                            ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body img {
+      max-width:    100%;
+      height:       auto;
+      display:      block;
+      border-radius: var(--radius-lg);
+      margin:       var(--sp-lg) auto;
+      border:       1px solid var(--cp-border);
+      box-shadow:
+        0 0 0 1px var(--cp-cyan-dim),
+        0 8px 40px rgba(0,0,0,0.7),
+        0 0 20px rgba(0,245,255,0.05);
+      transition:   var(--transition);
+      filter:       saturate(0.85);
+    }
+
+    .cp-body img:hover {
+      border-color: var(--cp-cyan);
+      box-shadow:
+        0 0 0 1px var(--cp-cyan),
+        0 12px 60px rgba(0,0,0,0.8),
+        0 0 30px var(--cp-cyan-glow);
+      filter:     saturate(1.1);
+      transform:  scale(1.01);
+    }
+
+    .cp-body figcaption {
+      text-align:    center;
+      font-size:     0.78rem;
+      font-family:   var(--font-mono);
+      color:         var(--cp-text-dim);
+      margin-top:    calc(-1 * var(--sp-sm));
+      margin-bottom: var(--sp-lg);
+      letter-spacing: 0.05em;
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           MISC INLINE ELEMENTS              ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body kbd {
+      font-family:   var(--font-mono);
+      font-size:     0.8em;
+      color:         var(--cp-cyan);
+      background:    var(--cp-surface-3);
+      border:        1px solid var(--cp-cyan-dim);
+      border-bottom: 2px solid var(--cp-cyan-dim);
+      border-radius: var(--radius);
+      padding:       0.1em 0.5em;
+      text-shadow:   0 0 6px var(--cp-cyan-glow);
+    }
+
+    .cp-body mark {
+      background:    rgba(255, 184, 0, 0.15);
+      color:         var(--cp-amber);
+      border-radius: 2px;
+      padding:       0.05em 0.3em;
+      font-family:   var(--font-mono);
+      font-size:     0.9em;
+    }
+
+    .cp-body abbr[title] {
+      color:          var(--cp-cyan);
+      text-decoration: underline dotted var(--cp-cyan-dim);
+      cursor:         help;
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           DETAILS / SUMMARY                 ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-body details {
+      background:    var(--cp-surface-2);
+      border:        1px solid var(--cp-border);
+      border-left:   2px solid var(--cp-cyan-dim);
+      border-radius: var(--radius-lg);
+      padding:       var(--sp-md);
+      margin:        var(--sp-md) 0;
+      transition:    border-color 0.2s;
+    }
+
+    .cp-body details[open] {
+      border-left-color: var(--cp-cyan);
+      box-shadow: inset 0 0 20px rgba(0,245,255,0.03);
+    }
+
+    .cp-body summary {
+      font-family:    var(--font-display);
+      font-size:      0.85rem;
+      letter-spacing: 0.1em;
+      color:          var(--cp-cyan);
+      cursor:         pointer;
+      user-select:    none;
+      list-style:     none;
+      display:        flex;
+      align-items:    center;
+      gap:            var(--sp-sm);
+      text-transform: uppercase;
+    }
+
+    .cp-body summary::before {
+      content:    '▶';
+      font-size:  0.65em;
+      transition: transform 0.2s ease;
+      color:      var(--cp-cyan-dim);
+    }
+
+    .cp-body details[open] > summary::before {
+      transform: rotate(90deg);
+      color:     var(--cp-cyan);
+    }
+
+    .cp-body details > *:not(summary) {
+      margin-top: var(--sp-md);
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           SELECTION                         ║
+       ╚══════════════════════════════════════════════╝ */
+    ::selection {
+      background: rgba(0, 245, 255, 0.2);
+      color:      var(--cp-cyan);
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           FOOTER                            ║
+       ╚══════════════════════════════════════════════╝ */
+    .cp-footer {
+      position:   relative;
+      z-index:    1;
+      max-width:  var(--max-width);
+      margin:     0 auto;
+      padding:    var(--sp-md);
+      border-top: 1px solid var(--cp-border);
+      display:    flex;
+      flex-wrap:  wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap:        var(--sp-sm);
+      font-family: var(--font-mono);
+      font-size:  0.65rem;
+      letter-spacing: 0.08em;
+      color:      var(--cp-text-dim);
+      text-transform: uppercase;
+    }
+
+    .cp-footer a {
+      color:      var(--cp-cyan-dim);
+      text-decoration: none;
+      border:     none;
+      font-family: var(--font-mono);
+      transition: var(--transition);
+    }
+
+    .cp-footer a:hover {
+      color:      var(--cp-cyan);
+      text-shadow: 0 0 8px var(--cp-cyan-glow);
+    }
+
+    .cp-footer-sig {
+      color: var(--cp-text-dim);
+      font-size: 0.6rem;
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           RESPONSIVE BREAKPOINTS            ║
+       ╚══════════════════════════════════════════════╝ */
+
+    /* Small phones */
+    @media (max-width: 380px) {
+      .cp-body {
+        padding:   var(--sp-md) var(--sp-sm);
+        font-size: 0.9rem;
+        border-left-width: 1px;
+        border-right-width: 1px;
+      }
+      .cp-body h1 { font-size: 1.4rem; }
+      .cp-body h2 { font-size: 1.1rem; }
+      .cp-body h3 { font-size: 1rem; }
+      .cp-body pre { padding: var(--sp-md) var(--sp-sm); font-size: 0.78rem; }
+    }
+
+    /* Tablets and up */
+    @media (min-width: 768px) {
+      .cp-body {
+        padding:   var(--sp-xl) var(--sp-lg);
+        font-size: 1.05rem;
+      }
+      :root {
+        --sp-md: 1.4rem;
+        --sp-lg: 2.4rem;
+        --sp-xl: 3.4rem;
+      }
+    }
+
+    /* ╔══════════════════════════════════════════════╗
+       ║           PRINT                             ║
+       ╚══════════════════════════════════════════════╝ */
+    @media print {
+      body::before, body::after { display: none; }
+      .cp-topbar, .cp-footer    { display: none; }
+      .cp-body {
+        background: #fff;
+        color: #111;
+        border: none;
+        max-width: 100%;
+      }
+      .cp-body h1,.cp-body h2,.cp-body h3 { color: #000; text-shadow: none; animation: none; }
+      .cp-body a { color: #000; border-bottom: 1px solid #000; }
+      .cp-body pre, .cp-body code { background: #f0f0f0; color: #111; text-shadow: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       TOP BAR
+       EDIT: .cp-topbar-brand  → your site name
+             .cp-topbar-tag    → your category
+  ═══════════════════════════════════════════════════════════ -->
+  <header class="cp-topbar">
+    <div class="cp-topbar-left">
+      <div class="cp-status-dot"></div>
+      <span class="cp-topbar-brand"><span>M</span>NOTES<span>//</span>SEC</span>
+      <span class="cp-topbar-tag">CYBER · LABS · INTEL</span>
+    </div>
+    <div class="cp-topbar-right" id="cp-clock">SYSTEM ONLINE</div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CONTENT ZONE
+       PASTE your markdown-converted HTML between the markers.
+       Keep <main class="cp-body"> — it applies all styles.
+  ═══════════════════════════════════════════════════════════ -->
+  <main class="cp-body">
+
+ <p>The blue team certification space just got a new entrant, and predictably, the marketing wars have started. TryHackMe launched SAL 2 recently and immediately started throwing shade at BTL2 in their comparison tables. Having spent real time with all three of these certifications, I&#39;m going to give you the unfiltered breakdown — including where the vendor marketing gets it embarrassingly wrong.</p>
+<hr>
+<h2>Three Certs, One Tier — Sort Of</h2>
+<p>Let&#39;s establish the playing field first. SAL 2, HTB CDSA, and BTL2 all occupy roughly the same career level: mid-to-advanced SOC analysts who have moved past the entry-level fundamentals and want a credential that actually reflects operational capability. If you&#39;re fresh out of a Security+ and wondering which of these to chase first, the answer is none of them — go get SAL 1 or BTL1, build your foundation, and come back.</p>
+<p>For everyone else, here&#39;s how to think about the competitive landscape before we go cert by cert.</p>
+<hr>
+<h2>SAL 2 (TryHackMe): The New Kid With Something to Prove</h2>
+<p>SAL 2 is the newest of the three, barely weeks old at the time of this writing. THM is marketing it as an &quot;advanced hands-on certification&quot; targeting mid-tier SOC analysts, and the format delivers on the hands-on promise: 12 multi-stage blue team scenarios across DFIR, log analysis, and AD analysis, with a 72-hour exam window and a mandatory report submission at the end.</p>
+<p>The $510 price tag for premium subscribers (or $657 without membership) is reasonable for what you get — the learning modules are included, and there&#39;s one free retake built in. For preparation, staying inside THM&#39;s own ecosystem makes the most sense here. The SOC Level 2 pathway covers log analysis, Splunk, Elastic Stack, and detection engineering — the core domains you&#39;ll need. If your fundamentals need refreshing, pair it with SOC Level 1. If you want to push further, the Advanced Endpoint Investigation and Security Engineering paths are worth adding.</p>
+<p>My honest take: SAL 2 sits comfortably between entry-level and genuinely advanced. If you already hold BTL2, you probably don&#39;t need it. But if you have BTL1 and want to level up before taking on BTL2&#39;s full weight, SAL 2 is a sensible stepping stone — and it may mature into something more widely recognized as THM builds track record around it.</p>
+<p>The bigger issue is that THM published a comparison table positioning SAL 2 as superior to BTL2 in several categories. Let&#39;s address that directly.</p>
+<hr>
+<h2>The Comparison Table THM Doesn&#39;t Want You to Think Too Hard About</h2>
+<p>THM&#39;s own marketing claimed SAL 2 beats BTL2 on industry recognition, judgment and communication assessment, and coverage depth. Every one of these claims needs correction.</p>
+<p>On <strong>recognition</strong>: BTL2 is trusted by military units and law enforcement agencies. SAL 2 is two weeks old. There&#39;s no version of this comparison where SAL 2 currently wins on recognition.</p>
+<p>On <strong>judgment and communication</strong>: BTL2 has a notoriously heavy focus on reporting quality and analyst judgment. If you&#39;ve sat the BTL2 exam, you know the reporting component isn&#39;t a formality — it&#39;s a core evaluation axis. THM claiming SAL 2 beats BTL2 here is, at best, premature and, at worst, deliberately misleading.</p>
+<p>On <strong>coverage depth</strong>: BTL2 includes advanced malware analysis (static analysis, dynamic analysis, portable executable headers, binary instruction extraction) and memory forensics with Volatility — domains that SAL 2 and CDSA touch only lightly, if at all. The claim that SAL 2 offers wider or deeper coverage than BTL2 doesn&#39;t survive five minutes of curriculum comparison.</p>
+<p>Vendor comparison tables exist to sell product. Read them accordingly.</p>
+<hr>
+<h2>HTB CDSA: Underestimated, and Deliberately Underpriced</h2>
+<p>CDSA gets described as an entry-level SOC analyst certification, which technically accurate but practically misleading. Yes, the stated target audience includes entry-level analysts, IT administrators, and junior personnel. But the actual difficulty — broad coverage of processes, tactical analytics, log analysis, threat hunting, and AD analysis — means many people find it on par with SAL 2 in terms of what it demands from you in the exam.</p>
+<p>The exam format is a 7-day window with two real incident investigations and flag collection, plus mandatory reporting evaluated by a live HTB instructor. That instructor-reviewed component matters: unlike SAL 2&#39;s automated grading system, CDSA&#39;s human evaluator brings actual professional judgment to your report quality. Results come back within 20 business days.</p>
+<p>The preparation path is clearly defined: complete the 15-module SOC Analyst job role path on HTB Academy, work through relevant Sherlocks (the forensics-focused challenges), and add the forensics and reverse engineering challenge categories for depth. Unlike SAL 2, where staying inside THM&#39;s ecosystem is the strategy, HTB&#39;s challenge variety gives you more surface area to build genuine competency.</p>
+<p>And then there&#39;s pricing. With an HTB Academy annual subscription, the CDSA exam voucher comes in at approximately $210. That is not a typo. For a fully practical, instructor-graded, industry-recognized certification at this capability level, $210 is genuinely one of the best value propositions in cybersecurity certifications. If you&#39;re budget-constrained and want a credential that will open doors while you build toward BTL2, CDSA is almost a no-brainer.</p>
+<p>One additional observation: if you hold CDSA, your chances of passing SAL 2 go up considerably. The domain overlap is real, and the hands-on discipline transfers directly.</p>
+<hr>
+<h2>BTL2: The One That Actually Costs You Something — And Is Worth It</h2>
+<p>BTL2 is the most difficult, most expensive, and most recognized of the three. There is no shortcut to framing this differently.</p>
+<p>The 72-hour exam window simulates a full corporate network intrusion investigation across multiple systems. You&#39;re not resolving isolated scenarios — you&#39;re working through a coordinated attack chain as it would appear in a real SOC environment. The reporting requirement isn&#39;t a checkbox; it&#39;s a substantial evaluation component that distinguishes BTL2 from certs where you submit flags and call it done.</p>
+<p>What makes BTL2 technically heavier than the other two:</p>
+<p><strong>Malware analysis is serious here.</strong> Where SAL 2 and CDSA ask you to extract basic IOCs from endpoints, BTL2 expects you to operate at the level of static and dynamic analysis, understanding PE headers, and reading binary-level instruction output. This is not beginner malware analysis.</p>
+<p><strong>Memory forensics is a core domain.</strong> You need to be comfortable with Volatility — not familiar, comfortable. Investigating a real network intrusion means you&#39;ll encounter scenarios where endpoint logs and network captures aren&#39;t enough. Memory artifacts fill the gaps, and BTL2 tests whether you can actually work them.</p>
+<p><strong>The prerequisites are real prerequisites.</strong> Two to four years of hands-on SOC experience is listed as a requirement, and it functions as one. Attempting BTL2 on the back of certifications alone — even strong ones like CDSA and SAL 2 — without real-world SOC time is how people fail and walk away confused about why. The exam is designed for people who have seen live incidents, not people who have read about them extensively.</p>
+<p>Results take up to 30 working days because everything is hand-marked. At roughly $2,600 including training and exam, it is the most expensive of the three — but the official course includes 231 lessons, 28 browser labs, and five months of access. Employer funding is the ideal path here. If you&#39;re paying out of pocket and you have the legitimate experience to back it, the career ROI still justifies it.</p>
+<hr>
+<h2>The Technical Essentials Across All Three</h2>
+<p>Regardless of which certification you&#39;re targeting, two tool categories will be assessed in all of them: <strong>Splunk</strong> and <strong>Elastic Stack</strong>. These aren&#39;t optional electives in your prep — they&#39;re the core SIEM platforms the entire blue team industry runs on, and your proficiency with both will directly determine your exam performance. Get comfortable with query syntax, dashboard creation, and alert logic in both environments before you attempt any of these exams.</p>
+<p>Malware analysis is the differentiator. SAL 2 and CDSA require basic static analysis capability to extract indicators of compromise. BTL2 requires substantially more. Know where you&#39;re targeting and calibrate your prep accordingly — don&#39;t overprepare for SAL 2 malware analysis, but do not underestimate what BTL2 demands.</p>
+<hr>
+<h2>Salary Expectations: What the Market Actually Pays</h2>
+<p>Based on SOC analyst salary data published recently, here&#39;s the realistic picture for holders of each certification in the US market:</p>
+<p>For <strong>SAL 2 and CDSA</strong> holders (Tier 1-2 analysts, 0–5 years experience): national averages run $55,000–$75,000 for Tier 1, stepping up to $75,000–$100,000 at the Tier 2 level for analysts with 2–5 years experience. Metro markets push this toward $65,000–$115,000. If you&#39;re holding one of these certifications and your current compensation sits outside this range, you have a documented basis for a compensation conversation with your employer.</p>
+<p>For <strong>BTL2 holders</strong>: the salary picture tracks with senior and advanced analyst roles, which reflects the 3–4 years of genuine SOC experience the certification expects you to bring. The numbers climb accordingly, and the recognition in government, military, and enterprise security contexts opens roles that the other two certs simply don&#39;t touch.</p>
+<hr>
+<h2>The Verdict</h2>
+<p>Here&#39;s my actual recommendation framework, stripped of vendor framing:</p>
+<p><strong>Tight budget, want recognition quickly</strong>: CDSA at ~$210 is the clearest value play in this space. The difficulty is real, the credential is growing, and the price-to-signal ratio is unmatched.</p>
+<p><strong>Building toward BTL2, want structured mid-tier practice</strong>: SAL 2 is a reasonable investment if you already hold SAL 1 or BTL1. It won&#39;t move the needle on recognition the way CDSA or BTL2 will — yet — but it forces disciplined blue team thinking at a higher complexity level than entry certs.</p>
+<p><strong>Want the most respected blue team credential available</strong>: BTL2, but only when you&#39;ve earned the prerequisites honestly. Don&#39;t attempt it because you&#39;ve stacked paper certifications. Attempt it when you&#39;ve worked real incidents in a real SOC and want the credential that reflects that.</p>
+<p>The certification isn&#39;t the shortcut. The experience is. The certification is what makes the experience legible to a hiring manager.</p>
+
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+       EDIT: brand name, link, and year as needed
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="cp-footer">
+    <span>© 2026 Motasem Notes</span>
+    <span class="cp-footer-sig">[ SYS.INTEGRITY: OK ]</span>
+    <a href="https://motasem-notes.net" target="_blank">motasem-notes.net</a>
+  </footer>
+
+
+  <!-- Live clock in topbar -->
+  <script>
+    (function () {
+      const el = document.getElementById('cp-clock');
+      if (!el) return;
+      function tick() {
+        const now = new Date();
+        const hh  = String(now.getHours()).padStart(2,'0');
+        const mm  = String(now.getMinutes()).padStart(2,'0');
+        const ss  = String(now.getSeconds()).padStart(2,'0');
+        el.textContent = `SYS://${hh}:${mm}:${ss}`;
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+
+</body>
+</html>

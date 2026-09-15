@@ -1,3 +1,8 @@
 {
+<<<<<<< HEAD
   "arzaba-theme-settings@@arzaba-sub-theme": "arzaba-future"
+=======
+  "arzaba-theme-settings@@arzaba-sub-theme": "arzaba-future",
+  "arzaba-theme-settings@@arzaba-font-override": false
+>>>>>>> 007af529b651db02e663f5c4c52dec598e7d96df
 }

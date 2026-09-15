@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 [🏠 Main Site](https://motasem-notes.net/) · [🛒 Store](https://shop.motasem-notes.net/) · [▶ YouTube](https://www.youtube.com/@MotasemHamdan) · [☕ Membership](https://buymeacoffee.com/notescatalog/membership)
 
 > Practitioner-grade cybersecurity notes, cert prep guides, and courses. All premium notes available at **[buymeacoffee.com/notescatalog/extras](https://buymeacoffee.com/notescatalog/extras)** or [shop.motasem-notes.net]
 
 - Complete Web Hacking Study Notes From [here](https://buymeacoffee.com/notescatalog/e/280732)
 
+=======
+Complete Web Hacking Study Notes From [here](https://buymeacoffee.com/notescatalog/e/280732)
+>>>>>>> 007af529b651db02e663f5c4c52dec598e7d96df
 # Advanced SQL Injections Cheat Sheet
 
 ## PostgreSQL Database Interaction

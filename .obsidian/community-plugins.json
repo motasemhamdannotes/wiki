@@ -1,5 +1,15 @@
 [
+<<<<<<< HEAD
   "obsidian-style-settings",
   "obsidian-plugin-toc",
   "obsidian-linter"
+=======
+  "obsidian-vault-changelog",
+  "obsidian-plugin-toc",
+  "remove-newlines",
+  "notes-to-html-pages",
+  "obsidian-git",
+  "obsidian-link-converter",
+  "obsidian-style-settings"
+>>>>>>> 007af529b651db02e663f5c4c52dec598e7d96df
 ]

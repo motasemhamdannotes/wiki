@@ -1,0 +1,18 @@
+# Obsidian device-specific workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace*.json
+
+# Obsidian cache and deleted files
+.obsidian/cache/
+.trash/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+~$*
