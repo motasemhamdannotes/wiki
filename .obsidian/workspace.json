@@ -190,6 +190,7 @@
   },
   "active": "7f51b4a8d3ca4804",
   "lastOpenFiles": [
+    "Offensive Security/Web Hacking/Command Injection Cheat Sheet.md",
     "Offensive Security/C2/Cobalt Strike Cheat Sheet.md",
     "Offensive Security/C2",
     "Offensive Security/Web Hacking/SQL Injection Cheat Sheet.md",
@@ -218,7 +219,6 @@
     "Tech/AI/ChatGPT Cheatsheet.md",
     "Tech/AI/AI and LLMs.md",
     "SOC Analyst Notes/Firewalls/Basics.md",
-    "SOC Analyst Notes/Operating Systems Security/Linux/Linux Security.md",
     "Offensive Security/Recon",
     "Offensive Security/Exploitation",
     "DFIR",
