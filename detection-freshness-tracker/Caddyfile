@@ -1,0 +1,16 @@
+{$SITE_DOMAIN} {
+	encode gzip zstd
+
+	# The rule-source repos aren't tiny; give the app room without leaning on
+	# Caddy's default request timeouts for the (rare) slow admin/backfill calls.
+	reverse_proxy api:8000 {
+		transport http {
+			read_timeout 120s
+		}
+	}
+
+	log {
+		output stdout
+		format console
+	}
+}

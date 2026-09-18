@@ -1,0 +1,28 @@
+# Overlay for a VPS with NOTHING else listening on 80/443. Adds the bundled
+# Caddy, which owns those ports and gets you automatic HTTPS with zero
+# extra config. Do NOT use this if another web server (nginx, Apache,
+# another Caddy) already serves other sites/domains on this box - use
+# docker-compose.local-proxy.yml instead.
+#
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.caddy.yml up -d --build
+
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN:?set SITE_DOMAIN in .env}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - api
+
+volumes:
+  caddy_data:
+  caddy_config:

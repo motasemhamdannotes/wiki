@@ -1,0 +1,23 @@
+{% macro source_badge(source) -%}
+<span class="badge badge-{{ source }}">{{ source }}</span>
+{%- endmacro %}
+
+{% macro severity_badge(severity) -%}
+{% if severity %}
+<span class="badge badge-{{ severity|lower }}">{{ severity }}</span>
+{% else %}
+<span class="badge badge-none">unscored</span>
+{% endif %}
+{%- endmacro %}
+
+{% macro kev_badge() -%}
+<span class="badge badge-kev">Actively exploited (KEV)</span>
+{%- endmacro %}
+
+{% macro cvss_badge(score, severity) -%}
+{% if score is not none %}
+<span class="badge badge-{{ severity|lower if severity else 'none' }}">CVSS {{ "%.1f"|format(score) }}</span>
+{% else %}
+<span class="badge badge-none">no CVSS yet</span>
+{% endif %}
+{%- endmacro %}

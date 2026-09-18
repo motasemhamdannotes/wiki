@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% import "partials/badges.html" as b %}
+
+{% block title %}{{ technique_id }} — Detection Rule Freshness Tracker{% endblock %}
+
+{% block content %}
+<div class="detail-header">
+  <div>
+    <h1>{{ technique_id }}</h1>
+    {% if technique and technique.name %}<p class="lede" style="margin-bottom:0;">{{ technique.name }}</p>{% endif %}
+    <div class="badge-row">
+      {% if technique and technique.tactic_names %}
+        {% for t in technique.tactic_names.split(", ") %}<span class="badge badge-none">{{ t }}</span>{% endfor %}
+      {% endif %}
+      {% if rules %}<span class="badge badge-ok">{{ rules|length }} detection{{ "s" if rules|length != 1 }} found</span>{% endif %}
+    </div>
+  </div>
+  <a href="https://attack.mitre.org/techniques/{{ technique_id.replace('.', '/') }}/" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 16px;border-radius:8px;font-size:13px;">View on MITRE ATT&amp;CK →</a>
+</div>
+
+<section>
+  <h2>Detections</h2>
+  {% if rules %}
+    {% include "partials/rules_table.html" with context %}
+  {% else %}
+  <div class="empty-state">
+    <div class="big">No detection found — yet</div>
+    None of SigmaHQ, Elastic detection-rules, or Splunk ESCU currently has a rule mapped to {{ technique_id }}.
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

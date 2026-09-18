@@ -1,0 +1,45 @@
+{
+  "type": "bundle",
+  "id": "bundle--test",
+  "objects": [
+    {
+      "type": "x-mitre-tactic",
+      "x_mitre_shortname": "initial-access",
+      "name": "Initial Access"
+    },
+    {
+      "type": "attack-pattern",
+      "revoked": false,
+      "x_mitre_is_subtechnique": false,
+      "name": "Exploit Public-Facing Application",
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "initial-access"}
+      ],
+      "external_references": [
+        {"source_name": "mitre-attack", "external_id": "T1190", "url": "https://attack.mitre.org/techniques/T1190/"}
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "revoked": false,
+      "x_mitre_is_subtechnique": true,
+      "name": "Code Signing",
+      "kill_chain_phases": [
+        {"kill_chain_name": "mitre-attack", "phase_name": "defense-evasion"}
+      ],
+      "external_references": [
+        {"source_name": "mitre-attack", "external_id": "T1553.002", "url": "https://attack.mitre.org/techniques/T1553/002/"}
+      ]
+    },
+    {
+      "type": "attack-pattern",
+      "revoked": true,
+      "x_mitre_is_subtechnique": false,
+      "name": "Old Revoked Technique",
+      "kill_chain_phases": [],
+      "external_references": [
+        {"source_name": "mitre-attack", "external_id": "T9999", "url": "https://attack.mitre.org/techniques/T9999/"}
+      ]
+    }
+  ]
+}

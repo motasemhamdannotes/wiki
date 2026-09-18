@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% import "partials/badges.html" as b %}
+
+{% block title %}{{ cve_id }} — Detection Rule Freshness Tracker{% endblock %}
+
+{% block content %}
+<div class="detail-header">
+  <div>
+    <h1>{{ cve_id }}</h1>
+    <div class="badge-row">
+      {% if cve %}{{ b.cvss_badge(cve.cvss_score, cve.cvss_severity) }}{% endif %}
+      {% if cve and cve.is_kev %}{{ b.kev_badge() }}{% endif %}
+      {% if rules %}<span class="badge badge-ok">{{ rules|length }} detection{{ "s" if rules|length != 1 }} found</span>{% endif %}
+    </div>
+  </div>
+  <a href="https://nvd.nist.gov/vuln/detail/{{ cve_id }}" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 16px;border-radius:8px;font-size:13px;">View on NVD →</a>
+</div>
+
+{% if cve and cve.description %}
+<div class="description-box">{{ cve.description }}</div>
+{% elif cve and not cve.enriched %}
+<div class="description-box">CVE metadata hasn't been pulled from NVD yet for this ID (it may be outside the recent-CVE lookback window). Detections found below are still accurate — they come straight from the rule repos, independent of NVD enrichment.</div>
+{% endif %}
+
+<section>
+  <h2>Detections</h2>
+  {% if rules %}
+    {% include "partials/rules_table.html" with context %}
+  {% else %}
+  <div class="empty-state">
+    <div class="big">No detection found — yet</div>
+    None of SigmaHQ, Elastic detection-rules, or Splunk ESCU currently has a rule referencing {{ cve_id }}.
+    {% if cve and cve.is_kev %}This CVE is on CISA's Known Exploited Vulnerabilities list, so it's worth writing custom detection now.{% endif %}
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

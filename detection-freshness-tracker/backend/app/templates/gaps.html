@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% import "partials/badges.html" as b %}
+
+{% block title %}Coverage gaps — Detection Rule Freshness Tracker{% endblock %}
+
+{% block content %}
+<h1>Coverage gaps</h1>
+<p class="lede">CVEs with no matching rule yet in SigmaHQ, Elastic detection-rules, or Splunk ESCU.</p>
+
+<form class="filter-bar" method="get" action="/gaps">
+  <label>Window
+    <select name="days" {% if kev_only %}disabled{% endif %}>
+      {% for d in [7, 14, 30, 60, 90, 180] %}
+      <option value="{{ d }}" {% if days == d %}selected{% endif %}>{{ d }} days</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label><input type="checkbox" name="kev_only" value="true" {% if kev_only %}checked{% endif %}> KEV only (actively exploited, any age)</label>
+  <label>Min CVSS
+    <input type="number" name="min_cvss" min="0" max="10" step="0.1" value="{{ min_cvss if min_cvss is not none else '' }}" style="width:70px;">
+  </label>
+  <button type="submit">Apply</button>
+  {% if kev_only or min_cvss %}<a href="/gaps" class="hint">Reset</a>{% endif %}
+</form>
+
+<p class="hint" style="margin-top:-10px;margin-bottom:18px;">{{ total }} matching CVE{{ "s" if total != 1 }}.</p>
+
+{% if gaps %}
+<div class="table-card">
+  <table>
+    <thead>
+      <tr><th>CVE</th><th>Severity</th><th></th><th>Published</th><th>KEV added</th></tr>
+    </thead>
+    <tbody>
+      {% for cve in gaps %}
+      <tr>
+        <td><a class="cve-id" href="/cve/{{ cve.cve_id }}">{{ cve.cve_id }}</a></td>
+        <td>{{ b.cvss_badge(cve.cvss_score, cve.cvss_severity) }}</td>
+        <td>{% if cve.is_kev %}{{ b.kev_badge() }}{% endif %}</td>
+        <td class="mono">{{ cve.published_date|date }}</td>
+        <td class="mono">{{ cve.kev_date_added|date if cve.kev_date_added else "—" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<div class="empty-state">
+  <div class="big">No gaps match these filters</div>
+  Either coverage is solid, or nothing's been ingested yet — check <a href="/about">About</a> for sync status.
+</div>
+{% endif %}
+
+<div class="pagination">
+  {% if page > 1 %}<a href="?days={{ days }}&kev_only={{ kev_only }}&min_cvss={{ min_cvss or '' }}&page={{ page - 1 }}" class="btn-secondary" style="padding:8px 14px;border-radius:6px;">← Prev</a>{% endif %}
+  {% if has_next %}<a href="?days={{ days }}&kev_only={{ kev_only }}&min_cvss={{ min_cvss or '' }}&page={{ page + 1 }}" class="btn-secondary" style="padding:8px 14px;border-radius:6px;">Next →</a>{% endif %}
+</div>
+{% endblock %}

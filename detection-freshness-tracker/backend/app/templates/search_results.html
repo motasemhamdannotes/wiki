@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Search: {{ result.query }} — Detection Rule Freshness Tracker{% endblock %}
+
+{% block content %}
+<h1>Search results for "{{ result.query }}"</h1>
+<p class="lede">Not a recognized CVE or ATT&amp;CK technique ID, so this matched against rule titles/descriptions instead.</p>
+
+{% if result.rules %}
+{% include "partials/rules_table.html" with context %}
+{% else %}
+<div class="empty-state">
+  <div class="big">No matching rules</div>
+  Try a CVE ID (CVE-YYYY-NNNNN), an ATT&amp;CK technique (TNNNN), or a different keyword.
+</div>
+{% endif %}
+{% endblock %}

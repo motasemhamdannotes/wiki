@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% import "partials/badges.html" as b %}
+
+{% block content %}
+<section>
+  <h1>Is there a detection for this yet?</h1>
+  <p class="lede">
+    Search a CVE (e.g. <code>CVE-2024-3400</code>) or an ATT&amp;CK technique (e.g. <code>T1190</code>)
+    to see whether SigmaHQ, Elastic, or Splunk ESCU has shipped a rule for it — and how fresh it is.
+  </p>
+  <form class="search-box" action="/search" method="get">
+    <input type="text" name="q" placeholder="CVE-2024-3400, T1190, or a rule keyword…" autofocus>
+    <button type="submit">Check coverage</button>
+  </form>
+  <div class="hint">{{ stats.total_rules }} rules tracked across 3 sources · {{ stats.total_cves_tracked }} CVEs on file · updated continuously</div>
+</section>
+
+<section>
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="n">{{ stats.rule_counts.sigma }}</div>
+      <div class="label">Sigma rules</div>
+    </div>
+    <div class="stat-card">
+      <div class="n">{{ stats.rule_counts.elastic }}</div>
+      <div class="label">Elastic rules</div>
+    </div>
+    <div class="stat-card">
+      <div class="n">{{ stats.rule_counts.splunk }}</div>
+      <div class="label">Splunk ESCU rules</div>
+    </div>
+    <div class="stat-card warn">
+      <div class="n">{{ stats.gap_count_30d }}</div>
+      <div class="label">Undetected CVEs (30d)</div>
+    </div>
+    <div class="stat-card warn">
+      <div class="n">{{ stats.gap_count_kev }}</div>
+      <div class="label">Undetected &amp; actively exploited</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Recent coverage gaps</h2>
+  {% if gaps %}
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr><th>CVE</th><th>Severity</th><th></th><th>Published</th></tr>
+      </thead>
+      <tbody>
+        {% for cve in gaps %}
+        <tr>
+          <td><a class="cve-id" href="/cve/{{ cve.cve_id }}">{{ cve.cve_id }}</a></td>
+          <td>{{ b.cvss_badge(cve.cvss_score, cve.cvss_severity) }}</td>
+          <td>{% if cve.is_kev %}{{ b.kev_badge() }}{% endif %}</td>
+          <td class="mono">{{ cve.published_date|date }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <p class="hint"><a href="/gaps">See all coverage gaps →</a></p>
+  {% else %}
+  <div class="empty-state">No gaps found in the last 30 days — nice.</div>
+  {% endif %}
+</section>
+
+<section>
+  <h2>Recently updated rules</h2>
+  {% if recent_rules %}
+    {% include "partials/rules_table.html" with context %}
+  {% else %}
+  <div class="empty-state">
+    <div class="big">No rules ingested yet</div>
+    Run <code>python -m app.cli full-sync</code> in the worker container to pull the initial dataset.
+  </div>
+  {% endif %}
+  {% if recent_rules %}<p class="hint"><a href="/rules">Browse all rules →</a></p>{% endif %}
+</section>
+{% endblock %}

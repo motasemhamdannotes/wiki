@@ -1,0 +1,17 @@
+# Overlay for a VPS that already runs a web server (nginx/Apache/etc.) for
+# other sites. Publishes api to 127.0.0.1 ONLY - not reachable from the
+# network directly, only from that existing web server on the same host,
+# which is expected to terminate TLS and reverse-proxy your subdomain to
+# it. See deploy/apache.conf.example or deploy/nginx.conf.example and the
+# "Deploying behind an existing web server" section in README.md.
+#
+# Usage:
+#   docker compose -f docker-compose.yml -f docker-compose.local-proxy.yml up -d --build
+#
+# Change API_HOST_PORT in .env if 8010 collides with something else already
+# running on this host.
+
+services:
+  api:
+    ports:
+      - "127.0.0.1:${API_HOST_PORT:-8010}:8000"

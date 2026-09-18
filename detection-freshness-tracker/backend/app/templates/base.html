@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Detection Rule Freshness Tracker{% endblock %}</title>
+  <meta name="description" content="Tracks SigmaHQ, Elastic detection-rules, and Splunk ESCU for coverage against recent CVEs and MITRE ATT&CK techniques.">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a href="/" class="brand">Detection<span class="dot">·</span>Freshness</a>
+      <nav class="main">
+        <a href="/" class="{% if request.url.path == '/' %}active{% endif %}">Home</a>
+        <a href="/gaps" class="{% if request.url.path == '/gaps' %}active{% endif %}">Gaps</a>
+        <a href="/rules" class="{% if request.url.path == '/rules' %}active{% endif %}">Rules</a>
+        <a href="/about" class="{% if request.url.path == '/about' %}active{% endif %}">About</a>
+        <a href="/docs">API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div>Tracking <a href="https://github.com/SigmaHQ/sigma" target="_blank" rel="noopener">SigmaHQ/sigma</a>,
+        <a href="https://github.com/elastic/detection-rules" target="_blank" rel="noopener">elastic/detection-rules</a>,
+        and <a href="https://github.com/splunk/security_content" target="_blank" rel="noopener">splunk/security_content</a>.
+        CVE data via NVD &amp; CISA KEV. ATT&amp;CK data via MITRE.</div>
+      <div><a href="/api/stats">JSON API</a> · <a href="/docs">API docs</a></div>
+    </div>
+  </footer>
+</body>
+</html>

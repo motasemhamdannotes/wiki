@@ -1,0 +1,37 @@
+# nginx server block for running Detection Rule Freshness Tracker on a
+# subdomain, on a VPS where nginx already serves your main domain (and owns
+# 80/443).
+#
+# Setup:
+#   1. Point this subdomain's DNS A/AAAA record at this VPS.
+#   2. Copy this file, replacing detect.example.com with your real subdomain:
+#        sudo cp deploy/nginx.conf.example /etc/nginx/sites-available/detect.example.com
+#        sudo sed -i 's/detect.example.com/YOUR-SUBDOMAIN/g' /etc/nginx/sites-available/detect.example.com
+#        sudo ln -s /etc/nginx/sites-available/detect.example.com /etc/nginx/sites-enabled/
+#        sudo nginx -t && sudo systemctl reload nginx
+#   3. Get a cert - certbot's nginx plugin finds this block by server_name
+#      and rewrites this file to add TLS + a redirect from :80, so you do
+#      NOT need to hand-write TLS config here:
+#        sudo certbot --nginx -d detect.example.com
+#   4. Bring up the app stack itself (see README.md - use
+#      docker-compose.local-proxy.yml, NOT docker-compose.caddy.yml,
+#      since nginx is already holding 80/443 on this box):
+#        docker compose -f docker-compose.yml -f docker-compose.local-proxy.yml up -d --build
+#
+# The app container publishes to 127.0.0.1:8010 by default (see
+# docker-compose.local-proxy.yml / API_HOST_PORT in .env) - change the port
+# below to match if you changed API_HOST_PORT.
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name detect.example.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:8010;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
