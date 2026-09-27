@@ -1,3 +1,5 @@
+
+🏠 [Main Site](https://motasem-notes.net/) · [🛒 Store](https://shop.motasem-notes.net/) · [▶ YouTube](https://www.youtube.com/@MotasemHamdan) · [☕ Membership](https://buymeacoffee.com/notescatalog/membership) [☕ Discord](https://discord.com/invite/A446Bx4z)
 # The Mastermind Notes
 
 ### Cybersecurity · Offensive & Defensive · Practitioner-First

@@ -2,7 +2,6 @@
 - 2026-09-18T1152 · [[XSS-CSRF Cheat Sheet]]
 - 2026-09-18T1152 · [[SQL Injection Cheat Sheet]]
 - 2026-09-18T1152 · [[API Pentesting]]
-- 2026-09-18T1146 · [[README]]
 - 2026-09-15T2103 · [[Command Injection Cheat Sheet]]
 - 2026-08-29T2012 · [[Cobalt Strike Cheat Sheet]]
 - 2026-08-29T1130 · [[Web Hacking Cheat Sheet]]
@@ -23,3 +22,4 @@
 - 2026-08-14T0927 · [[Bug Bounty Methodology]]
 - 2026-08-14T0927 · [[Bug Bounty Tools]]
 - 2026-08-06T2151 · [[Searching Exploits]]
+- 2026-08-06T2150 · [[Data Exfiltration Cheat Sheet]]
