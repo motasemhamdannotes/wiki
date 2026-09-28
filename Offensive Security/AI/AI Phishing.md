@@ -1,6 +1,8 @@
-🏠 [Main Site](https://motasem-notes.net/) · [🛒 Store](https://shop.motasem-notes.net/) · [▶ YouTube](https://www.youtube.com/@MotasemHamdan) · [☕ Membership](https://buymeacoffee.com/notescatalog/membership)
+🏠 [Main Site](https://motasem-notes.net/) · [🛒 Store](https://shop.motasem-notes.net/) · [▶ YouTube](https://www.youtube.com/@MotasemHamdan) · [☕ Membership](https://buymeacoffee.com/notescatalog/membership) [☕ Discord](https://discord.com/invite/A446Bx4z)
 
-> Practitioner-grade cybersecurity notes, cert prep guides, and courses. All premium notes available at **[buymeacoffee.com/notescatalog/extras](https://buymeacoffee.com/notescatalog/extras)** or [shop.motasem-notes.net](https://shop.motasem-notes.net)
+**50% Discount For Members**
+> Practitioner-grade cybersecurity notes, cert prep guides, and courses. All premium notes available at **[buymeacoffee.com/notescatalog/extras](https://buymeacoffee.com/notescatalog/extras)** or [shop.motasem-notes.net](shop.motasem-notes.net)
+
 # AI Agents Under Attack: Phishing, Prompt Injection, and MCP Exploitation
 AI agents , whether browser-based assistants operating in "agent mode" or local CLI tools like Claude Code and Gemini CLI are being given real capabilities: they can browse the web, read and write files, execute shell commands, and call external tools through the Model Context Protocol (MCP). Every one of those capabilities is also an attack surface.
 
