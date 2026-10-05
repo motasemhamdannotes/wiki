@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Offensive Security/Web Hacking/Command Injection Cheat Sheet.md",
+                "file": "Offensive Security/Evasion/Windows Evasion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Command Injection Cheat Sheet"
+              "title": "Windows Evasion"
             }
           }
         ]
@@ -184,10 +184,15 @@
   },
   "active": "4fc26cb32db95a91",
   "lastOpenFiles": [
+    "Offensive Security/Web Hacking/Command Injection Cheat Sheet.md",
+    "Offensive Security/Evasion/Windows Evasion.md",
+    "Offensive Security/Evasion",
+    "Offensive Security/Web Hacking/SQLmap Cheatsheet.md",
+    "Offensive Security/Web Hacking/File Inclusion.md",
+    "conflict-files-obsidian-git.md",
     "New Text Document.txt",
     "Certifications/thm sal2 vs btl2 vs cdsa.html",
     "Offensive Security/Web Hacking/XSS-CSRF Cheat Sheet.md",
-    "Offensive Security/Web Hacking/Command Injection Cheat Sheet.md",
     "Offensive Security/Web Hacking/API Pentesting.md",
     "Offensive Security/Web Hacking/SQL Injection Cheat Sheet.md",
     "Offensive Security/Web Hacking/Web Hacking Cheat Sheet.md",
@@ -211,15 +216,10 @@
     "GRC/Cyber Security Management.md",
     "DFIR/DFIR Terms and Definitions.md",
     "Bug Bounty/Bug Bounty Cheat Sheet.md",
-    "Bug Bounty/Bug Bounty Methodology.md",
-    "Bug Bounty/Bug Bounty Tools.md",
-    "Offensive Security/Kali Linux/Pentesting with Kali Linux.md",
     "Offensive Security/Recon",
     "Offensive Security/Windows AD Pentesting",
     "Offensive Security/Mobile Pentesting",
     "Offensive Security/Exploitation",
-    "Offensive Security/Web Hacking",
-    "Offensive Security/Kali Linux",
     "Premium Notes and Courses/images/logo v2 transparent.png",
     "Premium Notes and Courses/images/9.png",
     "Premium Notes and Courses/images/8.png",

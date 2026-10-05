@@ -1,12 +1,10 @@
-<<<<<<< HEAD
-[🏠 Main Site](https://motasem-notes.net/) · [🛒 Store](https://shop.motasem-notes.net/) · [▶ YouTube](https://www.youtube.com/@MotasemHamdan) · [☕ Membership](https://buymeacoffee.com/notescatalog/membership)
+🏠 [Main Site](https://motasem-notes.net/) · [🛒 Store](https://shop.motasem-notes.net/) · [▶ YouTube](https://www.youtube.com/@MotasemHamdan) · [☕ Membership](https://buymeacoffee.com/notescatalog/membership) [☕ Discord](https://discord.com/invite/A446Bx4z)
 
-> Practitioner-grade cybersecurity notes, cert prep guides, and courses. All premium notes available at **[buymeacoffee.com/notescatalog/extras](https://buymeacoffee.com/notescatalog/extras)** or [shop.motasem-notes.net]
+**50% Discount For Members**
+> Practitioner-grade cybersecurity notes, cert prep guides, and courses. All premium notes available at **[buymeacoffee.com/notescatalog/extras](https://buymeacoffee.com/notescatalog/extras)** or [shop.motasem-notes.net](shop.motasem-notes.net)
 
-- Complete Web Hacking Study Notes From [here](https://buymeacoffee.com/notescatalog/e/280732)
 
-=======
->>>>>>> 007af529b651db02e663f5c4c52dec598e7d96df
+Complete Web Hacking Study Notes From [here](https://buymeacoffee.com/notescatalog/e/280732)
 ## CSRF Defenses
 Cross-Site Request Forgery (CSRF) attacks force authenticated users to submit unwanted requests to web applications where they're currently logged in. The following mechanisms prevent these attacks:
 

@@ -1,3 +1,11 @@
+🏠 [Main Site](https://motasem-notes.net/) · [🛒 Store](https://shop.motasem-notes.net/) · [▶ YouTube](https://www.youtube.com/@MotasemHamdan) · [☕ Membership](https://buymeacoffee.com/notescatalog/membership) [☕ Discord](https://discord.com/invite/A446Bx4z)
+
+**50% Discount For Members**
+> Practitioner-grade cybersecurity notes, cert prep guides, and courses. All premium notes available at **[buymeacoffee.com/notescatalog/extras](https://buymeacoffee.com/notescatalog/extras)** or [shop.motasem-notes.net](shop.motasem-notes.net)
+
+
+Complete Web Hacking Study Notes From [here](https://buymeacoffee.com/notescatalog/e/280732)
+
 ## 1. What Is Command Injection?
 Command injection is one of the most critical vulnerability classes in web application security — ranked in the **OWASP Top 10** (#3 under Injection). It allows an attacker to execute arbitrary OS-level commands directly on the back-end server by injecting into input that is passed to a system command function.
 
