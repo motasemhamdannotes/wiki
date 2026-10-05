@@ -182,15 +182,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "4fc26cb32db95a91",
+  "active": "a49d27b6dd6a66ff",
   "lastOpenFiles": [
+    "New Text Document.txt",
     "Offensive Security/Web Hacking/Command Injection Cheat Sheet.md",
     "Offensive Security/Evasion/Windows Evasion.md",
     "Offensive Security/Evasion",
     "Offensive Security/Web Hacking/SQLmap Cheatsheet.md",
     "Offensive Security/Web Hacking/File Inclusion.md",
     "conflict-files-obsidian-git.md",
-    "New Text Document.txt",
     "Certifications/thm sal2 vs btl2 vs cdsa.html",
     "Offensive Security/Web Hacking/XSS-CSRF Cheat Sheet.md",
     "Offensive Security/Web Hacking/API Pentesting.md",
@@ -215,7 +215,6 @@
     "Offensive Security/Cloud/Azure Pentesting.md",
     "GRC/Cyber Security Management.md",
     "DFIR/DFIR Terms and Definitions.md",
-    "Bug Bounty/Bug Bounty Cheat Sheet.md",
     "Offensive Security/Recon",
     "Offensive Security/Windows AD Pentesting",
     "Offensive Security/Mobile Pentesting",

@@ -2,7 +2,7 @@
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/workspace*.json
-
+.obsidian 
 # Obsidian cache and deleted files
 .obsidian/cache/
 .trash/
